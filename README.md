@@ -1,3 +1,30 @@
-# Vignette - Pokémon Species Analysis
+## Overview
 
-This vignette provides a comprehensive analysis of Pokémon species data, leveraging the Pokémon API to obtain and process the data. The primary functions used in this analysis are designed to fetch data from the API, clean it, and transform it into a tabular data format.
+## Load Required Packages
+
+Required packages:
+
+-   httr
+-   jsonlite
+-   dplyr
+-   ggplot2
+
+<!-- -->
+
+    # Load required packages
+    library(httr)
+    library(jsonlite)
+    library(dplyr)
+    library(ggplot2)
+
+## Define Functions
+
+### Get Data
+
+### Data Cleaning
+
+### Other Functions
+
+## Basic Example
+
+## Analysis Example using Pokémon API Data

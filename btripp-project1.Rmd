@@ -1,0 +1,41 @@
+---
+title: "Vignette - Pokémon Species Analysis"
+author: "Benton Tripp"
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message=F, warning=F)
+```
+
+## Overview
+
+## Load Required Packages
+
+Required packages:
+
+- httr
+- jsonlite
+- dplyr
+- ggplot2
+
+```{r vignette-setup}
+# Load required packages
+library(httr)
+library(jsonlite)
+library(dplyr)
+library(ggplot2)
+```
+
+## Define Functions
+
+### Get Data
+
+### Data Cleaning
+
+### Other Functions
+
+## Basic Example
+
+## Analysis Example using Pokémon API Data
+
