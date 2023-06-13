@@ -1,8 +1,8 @@
----
-title: "Vignette - Pokémon Species Analysis"
-author: "Benton Tripp"
-date: "`r Sys.Date()`"
----
+# Vignette - Pokémon Species Analysis
+
+Benton Tripp
+
+`r Sys.Date()`
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = T, message=F, warning=F)

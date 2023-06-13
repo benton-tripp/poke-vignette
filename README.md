@@ -1,3 +1,7 @@
+# Vignette - Pokémon Species Analysis
+
+Benton Tripp 2023-06-13
+
 ## Overview
 
 ## Load Required Packages
