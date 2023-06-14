@@ -3,8 +3,7 @@ rmarkdown::render("btripp-project1.Rmd",
                   output_format = "github_document", 
                   output_file="README.md",
                   output_options = list(
-                    toc = T, 
-                    toc_float = T,
+                    toc = F,
                     number_sections = F,
                     df_print = "default"
                   ))
