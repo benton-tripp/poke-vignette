@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<ul>
+<li><a href="#vignette---pokémon-species-analysis">Vignette - Pokémon
+Species Analysis</a>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#load-required-packages">Load Required Packages</a></li>
+<li><a href="#define-functions">Define Functions</a>
+<ul>
+<li><a href="#get-data">Get Data</a></li>
+<li><a href="#data-cleaning">Data Cleaning</a></li>
+<li><a href="#other-functions">Other Functions</a></li>
+</ul></li>
+<li><a href="#basic-example">Basic Example</a></li>
+<li><a href="#analysis-example">Analysis Example</a></li>
+</ul></li>
+</ul>
+<h1 id="vignette---pokémon-species-analysis">Vignette - Pokémon Species
+Analysis</h1>
+<p>Benton Tripp <br> 2023-06-14</p>
+<h2 id="overview">Overview</h2>
+<p>This vignette provides a comprehensive analysis of Pokémon species
+data, leveraging the Pokémon API to obtain and process the data. The
+primary functions used in this analysis are designed to fetch data from
+the API, clean it, and transform it into a tabular data format.</p>
+<p>The first part of the vignette focuses on the description and usage
+of the functions that are used to fetch and clean the data. The
+<code>get_data</code> function is a general function used to fetch data
+from a specific endpoint of the Pokémon API. For example, the
+<code>get_species</code> is used to fetch data about the input Pokémon
+species. Data fetched from each of the different endpoints is then
+cleaned and transformed using the <code>clean_data</code> function.</p>
+<p>The second part of the vignette provides a basic example of how to
+use these functions to fetch and clean data for a specific Pokémon
+species. The example demonstrates how to fetch data for the Pokémon
+species “Pikachu”, clean the data, and combine the data from the species
+and Pokémon endpoints in` to a single list. oil9 The third part of the
+vignette presents an advanced example where a large tabular dataset is
+created by fetching and cleaning data for all Pokémon species from all
+generations. This dataset is then analyzed, cleaned further, and
+engineered to create new features. The analysis provides some basic
+insights into the distribution of some of the variables, and where some
+data is missing.</p>
+<p>The final part of the vignette continues the analysis, and
+demonstrates how to use Principal Component Analysis (PCA) and K-means
+clustering to group Pokémon species based on their similarities. The
+results of the clustering analysis are visualized using 2D and 3D
+scatter plots, allowing users to interactively explore the clusters of
+Pokémon species and their characteristics.</p>
+<h2 id="load-required-packages">Load Required Packages</h2>
+<p>Required packages:</p>
+<ul>
+<li>httr</li>
+<li>jsonlite</li>
+<li>dplyr</li>
+<li>ggplot2</li>
+<li>tidyr</li>
+<li>stringr</li>
+<li>glue</li>
+<li>purrr</li>
+<li>caret</li>
+<li>factoextra</li>
+<li>cluster</li>
+<li>plotly</li>
+<li>htmlwidgets</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Load required packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(httr)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="fu">library</span>(cluster)</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)</span></code></pre></div>
+<h2 id="define-functions">Define Functions</h2>
+<p>This section defines a series of functions for retrieving and
+cleaning data from the Pokémon API. These functions are designed to
+interact with different endpoints of the Pokémon API, process the data,
+and perform various operations that will be used in the subsequent
+analysis example.</p>
+<h3 id="get-data">Get Data</h3>
+<p>These are the primary functions being used to fetch data from the
+Pokémon API. The <code>get_from_url</code> function fetches data from a
+given URL directly, while the <code>get_data</code> function fetches
+data from a using the base URL and a user-defined endpoint (using the
+<code>get_from_url</code> function). The <code>get_generation</code>
+function fetches the names of all Pokémon species from a specific
+generation. These functions are the “backbone” of the data retrieval
+process.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Function to get data from a specific URL</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#   url: A string representing the URL from which to fetch data.</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#   A list containing the data fetched from the URL, parsed from JSON format.</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>get_from_url <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  <span class="co"># Send a GET request to the specified URL</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>  response <span class="ot">&lt;-</span> <span class="fu">GET</span>(url)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>  </span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>  <span class="co"># Parse the response content from JSON format, flatten the list, and return it</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>  <span class="fu">fromJSON</span>(<span class="fu">content</span>(response, <span class="st">&quot;text&quot;</span>), <span class="at">flatten=</span>T)</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>}</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co"># Function to get data from a specific endpoint of the Pokémon API</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#   endpoint: A string representing the endpoint of the Pokémon API from which to fetch data.</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#   id_or_name: A string or integer representing the ID or name of the Pokémon species to fetch data for.</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#   base_url: A string representing the base URL of the Pokémon API. Defaults to &quot;https://pokeapi.co/api/v2/&quot;.</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">#   A list containing the data fetched from the specified endpoint of the Pokémon API, parsed from JSON format.</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>get_data <span class="ot">&lt;-</span> <span class="cf">function</span>(endpoint, id_or_name, <span class="at">base_url=</span><span class="st">&quot;https://pokeapi.co/api/v2/&quot;</span>) {</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>  <span class="co"># Construct the full URL by appending the endpoint and ID/name to the base URL</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>  url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(base_url, endpoint, <span class="st">&quot;/&quot;</span>, id_or_name)</span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>  </span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>  <span class="co"># Try to fetch data from the URL, and return NULL if an error occurs</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>  <span class="fu">tryCatch</span>(</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>    {</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>      <span class="fu">get_from_url</span>(url)</span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>    },</span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>    <span class="at">error =</span> <span class="cf">function</span>(e) <span class="cn">NULL</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>  )</span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>}</span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="co"># Function to get the names of all Pokémon species from a specific generation</span></span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co">#   gen_id: A string representing the ID of the generation to fetch Pokémon species names for.</span></span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="co">#   A character vector containing the names of all Pokémon species from the specified generation.</span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a>get_generation <span class="ot">&lt;-</span> <span class="cf">function</span>(gen_id) {</span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a>  <span class="co"># Fetch data from the &quot;generation&quot; endpoint of the Pokémon API for the specified ID</span></span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a>  <span class="co"># and extract the names of all Pokémon species</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a>  <span class="fu">get_data</span>(<span class="st">&quot;generation&quot;</span>, gen_id)<span class="sc">$</span>pokemon_species<span class="sc">$</span>name</span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a>}</span></code></pre></div>
+<h3 id="data-cleaning">Data Cleaning</h3>
+<p>The data cleaning functions are designed to process and clean the
+data in a manner that enables them to be suitable for a tabular dataset.
+When retrieved initially, the JSON data is read into R as nested lists.
+These functions help to extract the relevant information from within the
+sub-lists, and put everything into a single named list.</p>
+<p>The <code>process_chain</code> and <code>clean_evolution_chain</code>
+functions process the evolution chain data:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Recursive function to process the evolution chain</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#   chain: A list representing the evolution chain to process.</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#   level: An integer representing the current level of the evolution chain. Defaults to 1.</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#   A data frame containing the species and evolution level for each stage of the evolution chain.</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>process_chain <span class="ot">&lt;-</span> <span class="cf">function</span>(chain, <span class="at">level =</span> <span class="dv">1</span>) {</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  <span class="co"># Extract the species and evolution details</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  <span class="cf">if</span> (<span class="st">&quot;species.name&quot;</span> <span class="sc">%in%</span> <span class="fu">names</span>(chain)) {</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    species <span class="ot">&lt;-</span> chain<span class="sc">$</span>species.name</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>    species <span class="ot">&lt;-</span> chain<span class="sc">$</span>species<span class="sc">$</span>name</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  }</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  evolution_details <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>(<span class="at">expr=</span>{</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>    <span class="cf">if</span> (<span class="st">&quot;evolution_details&quot;</span> <span class="sc">%in%</span> <span class="fu">names</span>(chain<span class="sc">$</span>evolves_to)) {</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>        chain<span class="sc">$</span>evolves_to</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>        chain<span class="sc">$</span>evolves_to[[<span class="dv">1</span>]]</span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>      }</span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) <span class="cn">NULL</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>  </span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(evolution_details)) <span class="fu">return</span>(<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>  </span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>  <span class="co"># Create a data frame for the current level</span></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">species =</span> species, </span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a>                   <span class="at">ev.level =</span> level, </span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a>                   <span class="at">stringsAsFactors =</span> F)</span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a>  </span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a>  <span class="co"># If there are more levels, process them recursively</span></span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(evolution_details) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a>    df_next <span class="ot">&lt;-</span> <span class="fu">process_chain</span>(evolution_details, level <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df, df_next)</span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a>  }</span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a>  <span class="fu">return</span>(df)</span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a>}</span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a><span class="co"># Function to clean the evolution chain data</span></span>
+<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a><span class="co">#   data: A list representing the Pokémon data to clean.</span></span>
+<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a><span class="co">#   The cleaned Pokémon data with the evolution chain data replaced by a string and a progress value.</span></span>
+<span id="cb3-42"><a href="#cb3-42" tabindex="-1"></a>clean_evolution_chain <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb3-43"><a href="#cb3-43" tabindex="-1"></a>  <span class="co"># Extract evolution_chain data</span></span>
+<span id="cb3-44"><a href="#cb3-44" tabindex="-1"></a>  e.chain <span class="ot">&lt;-</span> <span class="fu">get_from_url</span>(data<span class="sc">$</span>evolution_chain<span class="sc">$</span>url)<span class="sc">$</span>chain <span class="sc">%&gt;%</span> </span>
+<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a>    <span class="fu">process_chain</span>()</span>
+<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.data.frame</span>(e.chain)) {</span>
+<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a>    e.chain.str <span class="ot">&lt;-</span> <span class="fu">paste</span>(e.chain<span class="sc">$</span>species, <span class="at">collapse=</span><span class="st">&quot;, &quot;</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a>    e.chain <span class="ot">&lt;-</span> <span class="fu">subset</span>(e.chain, species<span class="sc">==</span>data<span class="sc">$</span>name)<span class="sc">$</span>ev.level <span class="sc">/</span> <span class="fu">max</span>(e.chain<span class="sc">$</span>ev.level)</span>
+<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a>    e.chain.str <span class="ot">&lt;-</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a>  }</span>
+<span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a>  <span class="co"># Replace evolution_chain </span></span>
+<span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a>  data<span class="sc">$</span>evolution_progress <span class="ot">&lt;-</span> e.chain</span>
+<span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a>  data<span class="sc">$</span>evolution_chain <span class="ot">&lt;-</span> e.chain.str</span>
+<span id="cb3-55"><a href="#cb3-55" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb3-56"><a href="#cb3-56" tabindex="-1"></a>}</span></code></pre></div>
+<p>The <code>clean_pal_park_encounters</code> function cleans the Pal
+Park encounters data:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Function to clean the Pal Park encounters data</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#   data: A list representing the Pokémon data to clean.</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#   The cleaned Pokémon data with the Pal Park encounters data replaced by separate fields.</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>clean_pal_park_encounters <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>  ppe <span class="ot">&lt;-</span> data<span class="sc">$</span>pal_park_encounters</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>  data<span class="sc">$</span>pal_park_encounters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  data<span class="sc">$</span>pal_park_encounters_base_score <span class="ot">&lt;-</span> ppe<span class="sc">$</span>base_score</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>  data<span class="sc">$</span>pal_park_encounters_rate <span class="ot">&lt;-</span> ppe<span class="sc">$</span>rate</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>  data<span class="sc">$</span>pal_park_encounters_area <span class="ot">&lt;-</span> ppe<span class="sc">$</span>area.name</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>}</span></code></pre></div>
+<p>The <code>clean_stats</code> function extracts and cleans the Pokémon
+stats data:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Function to clean the Pokémon stats data</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#   data: A list representing the Pokémon data to clean.</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#   The cleaned Pokémon data with the stats data replaced by separate fields.</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>clean_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  pokemon_stats <span class="ot">&lt;-</span> data<span class="sc">$</span>stats</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  data<span class="sc">$</span>stats <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>  <span class="co"># Extract stat names from pokemon_stats</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>  stat_names <span class="ot">&lt;-</span> <span class="fu">unique</span>(pokemon_stats<span class="sc">$</span>stat.name)</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>  <span class="co"># Create new names by prepending &quot;base_&quot; to stat names</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>  new_names <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;base_&quot;</span>, <span class="fu">gsub</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot;_&quot;</span>, stat_names))</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(stat_names)) {</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    data[[new_names[i]]] <span class="ot">&lt;-</span> <span class="fu">subset</span>(pokemon_stats, stat.name <span class="sc">==</span> stat_names[i])<span class="sc">$</span>base_stat</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>  }</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>}</span></code></pre></div>
+<p>The <code>clean_data</code> function is a comprehensive function that
+applies all the cleaning operations to the data:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Comprehensive function to clean the Pokémon data</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#   data: A list representing the Pokémon data to clean.</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#   data_group: A string representing the group of the data. Can be &quot;species&quot; or &quot;pokemon&quot;. Defaults to &quot;species&quot;.</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#   The cleaned Pokémon data with all the cleaning operations applied.</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">data_group=</span><span class="st">&quot;species&quot;</span>) {</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">map</span>(data, <span class="cf">function</span>(selected) {</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">is.data.frame</span>(selected)) {</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>      <span class="cf">if</span> (<span class="st">&quot;language.name&quot;</span> <span class="sc">%in%</span> <span class="fu">names</span>(selected)) {</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>        selected <span class="ot">&lt;-</span> selected <span class="sc">%&gt;%</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>          <span class="fu">filter</span>(language.name <span class="sc">==</span> <span class="st">&quot;en&quot;</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>      } </span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>    }</span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>    </span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>    <span class="cf">if</span> (<span class="st">&quot;name&quot;</span> <span class="sc">%in%</span> <span class="fu">names</span>(selected)) {</span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>      <span class="fu">return</span>(selected<span class="sc">$</span>name)</span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (<span class="st">&quot;genus&quot;</span> <span class="sc">%in%</span> <span class="fu">names</span>(selected)) {</span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>      <span class="fu">return</span>(selected<span class="sc">$</span>genus)</span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a>      <span class="fu">return</span>(selected)</span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a>    }</span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a>  })</span>
+<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a>  <span class="cf">if</span> (data_group <span class="sc">==</span> <span class="st">&quot;species&quot;</span>) {</span>
+<span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a>    data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a>      <span class="fu">clean_evolution_chain</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a>      <span class="fu">clean_pal_park_encounters</span>()</span>
+<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (data_group <span class="sc">==</span> <span class="st">&quot;pokemon&quot;</span>) {</span>
+<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a>    data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">clean_stats</span>()</span>
+<span id="cb6-30"><a href="#cb6-30" tabindex="-1"></a>    data<span class="sc">$</span>moves <span class="ot">&lt;-</span> data<span class="sc">$</span>moves<span class="sc">$</span>move.name</span>
+<span id="cb6-31"><a href="#cb6-31" tabindex="-1"></a>    data<span class="sc">$</span>held_items <span class="ot">&lt;-</span> data<span class="sc">$</span>held_items<span class="sc">$</span>item.name</span>
+<span id="cb6-32"><a href="#cb6-32" tabindex="-1"></a>    data<span class="sc">$</span>types <span class="ot">&lt;-</span> data<span class="sc">$</span>types<span class="sc">$</span>type.name</span>
+<span id="cb6-33"><a href="#cb6-33" tabindex="-1"></a>    data<span class="sc">$</span>abilities <span class="ot">&lt;-</span> data<span class="sc">$</span>abilities<span class="sc">$</span>ability.name</span>
+<span id="cb6-34"><a href="#cb6-34" tabindex="-1"></a>  }</span>
+<span id="cb6-35"><a href="#cb6-35" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb6-36"><a href="#cb6-36" tabindex="-1"></a>}</span></code></pre></div>
+<h3 id="other-functions">Other Functions</h3>
+<p>The <code>get_species</code> and <code>get_pokemon</code> functions
+fetch and clean data about a specific Pokémon species and a specific
+Pokémon respectively, applying the <code>get_data</code> and
+<code>clean_data</code> functions, as well as removing unnecessary
+variables.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Function to get and clean data about a Pokémon species</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#   id_or_name: A string or numeric representing the ID or name of the Pokémon species.</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#   A cleaned list of data about the Pokémon species.</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>get_species <span class="ot">&lt;-</span> <span class="cf">function</span>(id_or_name) {</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  id_or_name <span class="ot">&lt;-</span> <span class="fu">tolower</span>(<span class="fu">as.character</span>(id_or_name))</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">get_data</span>(<span class="st">&quot;pokemon-species&quot;</span>, id_or_name)</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  data <span class="ot">&lt;-</span> data[<span class="sc">!</span>(<span class="fu">names</span>(data) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;flavor_text_entries&quot;</span>, <span class="st">&quot;pokedex_numbers&quot;</span>, <span class="st">&quot;varieties&quot;</span>, </span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>                                    <span class="st">&quot;names&quot;</span>, <span class="st">&quot;form_descriptions&quot;</span>, <span class="st">&quot;evolves_from_species&quot;</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>                                    <span class="st">&quot;order&quot;</span>, <span class="st">&quot;past_types&quot;</span>, <span class="st">&quot;is_default&quot;</span>, <span class="st">&quot;forms&quot;</span>))] <span class="sc">%&gt;%</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>    <span class="fu">clean_data</span>()</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>}</span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co"># Function to get and clean data about a specific Pokémon</span></span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#   id_or_name: A string or numeric representing the ID or name of the Pokémon.</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#   A cleaned list of data about the Pokémon.</span></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a>get_pokemon <span class="ot">&lt;-</span> <span class="cf">function</span>(id_or_name) {</span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a>  id_or_name <span class="ot">&lt;-</span> <span class="fu">tolower</span>(<span class="fu">as.character</span>(id_or_name))</span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">get_data</span>(<span class="st">&quot;pokemon&quot;</span>, id_or_name)</span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a>  data <span class="ot">&lt;-</span> data[<span class="sc">!</span>(<span class="fu">names</span>(data) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;sprites&quot;</span>, <span class="st">&quot;order&quot;</span>, <span class="st">&quot;location_area_encounters&quot;</span>, </span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a>                                    <span class="st">&quot;game_indices&quot;</span>, <span class="st">&quot;is_default&quot;</span>, <span class="st">&quot;forms&quot;</span>, <span class="st">&quot;past_types&quot;</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a>                                    <span class="st">&quot;past_abilities&quot;</span>))] <span class="sc">%&gt;%</span></span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a>    <span class="fu">clean_data</span>(<span class="at">data_group=</span><span class="st">&quot;pokemon&quot;</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a>}</span></code></pre></div>
+<p>The <code>get_all_vars</code> function fetches a character vector of
+all abilities, types, or moves:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Function to get a character vector of all abilities, types, or moves</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#   v: A string representing the type of data to fetch. Can be &quot;ability&quot;, &quot;type&quot;, or &quot;move&quot;. Defaults to &quot;ability&quot;.</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#   base_url: A string representing the base URL of the API. Defaults to &quot;https://pokeapi.co/api/v2/&quot;.</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#   A character vector of all abilities, types, or moves.</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>get_all_vars <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="st">&quot;ability&quot;</span>, <span class="st">&quot;type&quot;</span>, <span class="st">&quot;move&quot;</span>), <span class="at">base_url=</span><span class="st">&quot;https://pokeapi.co/api/v2/&quot;</span>) {</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>  v <span class="ot">&lt;-</span> <span class="fu">tolower</span>(v)</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>  v <span class="ot">&lt;-</span> <span class="fu">match.arg</span>(v) </span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>  <span class="fu">get_from_url</span>(<span class="fu">paste0</span>(base_url, <span class="fu">glue</span>(<span class="st">&quot;/{v}?offset=0&amp;limit=1000&quot;</span>)))<span class="sc">$</span>results<span class="sc">$</span>name </span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>}</span></code></pre></div>
+<p>The <code>get_gen_data</code> function fetches and cleans data for
+all Pokémon species from a specific generation:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Function to get and clean data for all Pokémon species from a specific generation</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">#   generation_id: A string or numeric representing the ID of the generation.</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co">#   cache: A boolean indicating whether to use cached data if available. Defaults to TRUE.</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">#   cache_loc: A string representing the location of the cache. Defaults to &quot;data&quot;.</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co">#   verbose: A boolean indicating whether to print progress messages. Defaults to TRUE.</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">#   A cleaned list of data for all Pokémon species from the specified generation.</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>get_gen_data <span class="ot">&lt;-</span> <span class="cf">function</span>(generation_id, <span class="at">cache=</span>T, <span class="at">cache_loc=</span><span class="st">&quot;data&quot;</span>, <span class="at">verbose=</span>T) {</span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>  <span class="cf">if</span> (cache) {</span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>    fpath <span class="ot">&lt;-</span> <span class="fu">file.path</span>(cache_loc, <span class="fu">paste0</span>(generation_id, <span class="st">&quot;.RDS&quot;</span>))</span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">file.exists</span>(fpath)) {</span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a>      <span class="fu">return</span>(<span class="fu">readRDS</span>(fpath))</span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a>    } </span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a>  } </span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a>  gen_names <span class="ot">&lt;-</span> <span class="fu">get_generation</span>(generation_id)</span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a>  <span class="cf">if</span> (verbose) <span class="fu">cat</span>(<span class="fu">glue</span>(<span class="st">&quot;{Sys.time()} - Getting species data for {generation_id}...</span><span class="sc">\n\n</span><span class="st">&quot;</span>))</span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a>  gen_species_data <span class="ot">&lt;-</span> <span class="fu">map</span>(gen_names, <span class="sc">~</span><span class="fu">get_species</span>(.x))</span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a>  <span class="cf">if</span> (verbose) <span class="fu">cat</span>(<span class="fu">glue</span>(<span class="st">&quot;{Sys.time()} - Getting pokemon data for {generation_id}...</span><span class="sc">\n\n</span><span class="st">&quot;</span>))</span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a>  gen_pokemon_data <span class="ot">&lt;-</span> <span class="fu">map</span>(gen_names, <span class="sc">~</span><span class="fu">get_pokemon</span>(.x))</span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a>  <span class="fu">names</span>(gen_species_data) <span class="ot">&lt;-</span> gen_names</span>
+<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a>  <span class="co"># Remove uncommon cases where multiple varieties of same species</span></span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a>  mask <span class="ot">&lt;-</span> <span class="fu">map_lgl</span>(gen_pokemon_data, <span class="sc">~</span><span class="fu">length</span>(.x) <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a>  gen_species_data <span class="ot">&lt;-</span> gen_species_data[mask]</span>
+<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a>  gen_pokemon_data <span class="ot">&lt;-</span> gen_pokemon_data[mask]</span>
+<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a>  <span class="co"># Combine data from two endpoints</span></span>
+<span id="cb9-27"><a href="#cb9-27" tabindex="-1"></a>  combined_data <span class="ot">&lt;-</span> <span class="fu">modifyList</span>(gen_species_data, gen_pokemon_data)</span>
+<span id="cb9-28"><a href="#cb9-28" tabindex="-1"></a>  <span class="cf">if</span> (cache) {</span>
+<span id="cb9-29"><a href="#cb9-29" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(cache_loc)) <span class="fu">dir.create</span>(cache_loc)</span>
+<span id="cb9-30"><a href="#cb9-30" tabindex="-1"></a>    <span class="fu">saveRDS</span>(combined_data, fpath)</span>
+<span id="cb9-31"><a href="#cb9-31" tabindex="-1"></a>  }</span>
+<span id="cb9-32"><a href="#cb9-32" tabindex="-1"></a>  <span class="fu">return</span>(combined_data)</span>
+<span id="cb9-33"><a href="#cb9-33" tabindex="-1"></a>}</span></code></pre></div>
+<p>The <code>make_tabular_data</code> function transforms the data into
+a tabular format:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Function to transform the data into a tabular format</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#   data: A list representing the Pokémon data to transform.</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#   A data frame representing the Pokémon data in a tabular format.</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>make_tabular_data <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">lapply</span>(data, <span class="cf">function</span>(x) {</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>    <span class="fu">lapply</span>(x, <span class="cf">function</span>(y) {</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">is.vector</span>(y) <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(y) <span class="sc">&gt;</span> <span class="dv">1</span>) {</span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">paste</span>(y, <span class="at">collapse =</span> <span class="st">&quot;, &quot;</span>))</span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>        <span class="fu">return</span>(y)</span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>      }</span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>    })</span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>  })</span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a>  </span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">map_df</span>(data, <span class="sc">~</span>.x)</span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>  <span class="fu">return</span>(df)</span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a>}</span></code></pre></div>
+<p>The <code>get_bulk_data</code> function fetches and cleans data for
+all Pokémon species from multiple generations:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Function to get and clean data for all Pokémon species from multiple generations</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co">#   gen_ids: A character vector representing the IDs of the generations. Defaults to all generations.</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co">#   cache: A boolean indicating whether to use cached data if available. Defaults to TRUE.</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co">#   cache_loc: A string representing the location of the cache. Defaults to &quot;data&quot;.</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="co">#   verbose: A boolean indicating whether to print progress messages. Defaults to TRUE.</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co">#   A cleaned data frame of data for all Pokémon species from the specified generations.</span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>get_bulk_data <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">gen_ids=</span><span class="fu">c</span>(<span class="st">&quot;generation-i&quot;</span>, <span class="st">&quot;generation-ii&quot;</span>, <span class="st">&quot;generation-iii&quot;</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>                                    <span class="st">&quot;generation-iv&quot;</span>, <span class="st">&quot;generation-v&quot;</span>, <span class="st">&quot;generation-vi&quot;</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>                                    <span class="st">&quot;generation-vii&quot;</span>, <span class="st">&quot;generation-viii&quot;</span>, <span class="st">&quot;generation-ix&quot;</span>), </span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>                          <span class="at">cache=</span>T, <span class="at">cache_loc=</span><span class="st">&quot;data&quot;</span>, <span class="at">verbose=</span>T) {</span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a>  </span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">map</span>(gen_ids, <span class="sc">~</span><span class="fu">get_gen_data</span>(.x, cache, cache_loc, verbose)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a>    <span class="fu">unlist</span>(<span class="at">recursive=</span>F) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>    <span class="fu">make_tabular_data</span>()</span>
+<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a>  </span>
+<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a>}</span></code></pre></div>
+<h2 id="basic-example">Basic Example</h2>
+<p>This basic example demonstrates how to fetch data for the Pokémon
+species “Pikachu”, clean the data, and combine the data from the species
+and Pokémon endpoints into a single dataset:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>species_data <span class="ot">&lt;-</span> <span class="fu">get_species</span>(<span class="st">&quot;pikachu&quot;</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>pokemon_data <span class="ot">&lt;-</span> <span class="fu">get_pokemon</span>(<span class="st">&quot;pikachu&quot;</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co"># Combine data from two endpoints</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> <span class="fu">modifyList</span>(species_data, pokemon_data)</span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="fu">str</span>(combined_data)</span></code></pre></div>
+<pre><code>## List of 37
+##  $ base_happiness                : int 50
+##  $ capture_rate                  : int 190
+##  $ color                         : chr &quot;yellow&quot;
+##  $ egg_groups                    : chr [1:2] &quot;ground&quot; &quot;fairy&quot;
+##  $ evolution_chain               : chr &quot;pichu, pikachu, raichu&quot;
+##  $ forms_switchable              : logi FALSE
+##  $ gender_rate                   : int 4
+##  $ genera                        : chr &quot;Mouse Pokémon&quot;
+##  $ generation                    : chr &quot;generation-i&quot;
+##  $ growth_rate                   : chr &quot;medium&quot;
+##  $ habitat                       : chr &quot;forest&quot;
+##  $ has_gender_differences        : logi TRUE
+##  $ hatch_counter                 : int 10
+##  $ id                            : int 25
+##  $ is_baby                       : logi FALSE
+##  $ is_legendary                  : logi FALSE
+##  $ is_mythical                   : logi FALSE
+##  $ name                          : chr &quot;pikachu&quot;
+##  $ shape                         : chr &quot;quadruped&quot;
+##  $ evolution_progress            : num 0.667
+##  $ pal_park_encounters_base_score: int 80
+##  $ pal_park_encounters_rate      : int 10
+##  $ pal_park_encounters_area      : chr &quot;forest&quot;
+##  $ abilities                     : chr [1:2] &quot;static&quot; &quot;lightning-rod&quot;
+##  $ base_experience               : int 112
+##  $ height                        : int 4
+##  $ held_items                    : chr [1:2] &quot;oran-berry&quot; &quot;light-ball&quot;
+##  $ moves                         : chr [1:101] &quot;mega-punch&quot; &quot;pay-day&quot; &quot;thunder-punch&quot; &quot;slam&quot; ...
+##  $ species                       : chr &quot;pikachu&quot;
+##  $ types                         : chr &quot;electric&quot;
+##  $ weight                        : int 60
+##  $ base_hp                       : int 35
+##  $ base_attack                   : int 55
+##  $ base_defense                  : int 40
+##  $ base_special_attack           : int 50
+##  $ base_special_defense          : int 50
+##  $ base_speed                    : int 90</code></pre>
+<h2 id="analysis-example">Analysis Example</h2>
+<p>In this section, a more comprehensive analysis of the data fetched
+from the Pokémon API is conducted. The analysis includes data cleaning,
+feature engineering, exploratory data analysis, and clustering. We
+create histograms, density plots, and boxplots for different variables
+in the dataset. This provides insights into data distribution and helps
+to identify potential outliers.</p>
+<p>This section also demonstrates a potential use-case of the data use
+Principal Component Analysis (PCA) and K-means clustering to group
+Pokémon species based on their similarities. The results of the
+clustering analysis are visualized using 2D and 3D scatter plots.</p>
+<p>The first step of this analysis is to get the data for all 9
+generations (the default of the <code>get_bulk_data</code>
+function):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>all_data <span class="ot">&lt;-</span> <span class="fu">get_bulk_data</span>(<span class="at">verbose=</span>T)</span></code></pre></div>
+<p>To better understand what data is actually usable, create a bar plot
+depicting “NA” counts by variable (only include variables with NA
+counts):</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Calculate NA counts</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>na_counts <span class="ot">&lt;-</span> <span class="fu">sapply</span>(all_data, <span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">is.na</span>(x)))</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co"># Keep only variables with NA counts</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>na_counts <span class="ot">&lt;-</span> na_counts[na_counts <span class="sc">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co"># Convert to data frame for plotting</span></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>na_counts_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">variable =</span> <span class="fu">names</span>(na_counts), <span class="at">count =</span> na_counts)</span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="co"># Create bar plot</span></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a><span class="fu">ggplot</span>(na_counts_df, <span class="fu">aes</span>(<span class="at">x =</span> variable, <span class="at">y =</span> count)) <span class="sc">+</span></span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill=</span><span class="st">&quot;darkblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;NA Counts by Variable&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Variable&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count of NAs&quot;</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Create the same plot, but have the bars be stacked, and colored by
+the “generation” variable:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Calculate proportion of NAs in each column for each generation</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>na_prop <span class="ot">&lt;-</span> all_data <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">group_by</span>(generation) <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span><span class="fu">mean</span>(<span class="fu">is.na</span>(.))))</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="co"># Reshape data for plotting</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>na_prop_long <span class="ot">&lt;-</span> na_prop <span class="sc">%&gt;%</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>generation, <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;prop_na&quot;</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a><span class="co"># Filter to include only variables with NAs</span></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>na_prop_long <span class="ot">&lt;-</span> na_prop_long <span class="sc">%&gt;%</span></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a>  <span class="fu">filter</span>(prop_na <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a><span class="co"># Create stacked bar plot</span></span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a><span class="fu">ggplot</span>(na_prop_long, <span class="fu">aes</span>(<span class="at">x =</span> variable, <span class="at">y =</span> prop_na, <span class="at">fill =</span> generation)) <span class="sc">+</span></span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="sc">+</span></span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Proportion of NAs by Variable and Generation&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Variable&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Proportion of NAs&quot;</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>In this step, histograms and density plots are created for continuous
+numeric variable in the dataset:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># Select variables</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">grep</span>(<span class="st">&quot;^base_&quot;</span>, <span class="fu">names</span>(all_data), <span class="at">value =</span> T), <span class="st">&quot;weight&quot;</span>, <span class="st">&quot;height&quot;</span>, <span class="st">&quot;capture_rate&quot;</span>, <span class="st">&quot;pal_park_encounters_rate&quot;</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="co"># Reshape data to long format</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>long_data <span class="ot">&lt;-</span> all_data <span class="sc">%&gt;%</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(vars)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>  <span class="fu">gather</span>(variable, value)</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a><span class="do">## </span><span class="al">TODO</span><span class="do">: Fix the labels in the facet-wrapped plots</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="co"># Create a single plot with facets for each variable</span></span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a><span class="fu">ggplot</span>(long_data, <span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span></span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), <span class="at">bins =</span> <span class="dv">30</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color=</span><span class="st">&quot;darkblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> variable, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="sc">+</span></span>
+<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram and Density Plots&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Value&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Create boxplots for each of the same variables in the dataset in
+order to better understand if the data is symmetrical, how tightly the
+data is grouped, and if and how the data is skewed:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="do">## </span><span class="al">TODO</span><span class="do">: </span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="do">## - Fix the labels in the facet-wrapped plots</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="do">## - Add Color to the plots</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="do">## - Add points with jitter (maybe)?</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="co"># Create a single plot with facets for each variable</span></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="fu">ggplot</span>(long_data, <span class="fu">aes</span>(<span class="at">x =</span> variable, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> variable, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Boxplots&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Variable&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Value&quot;</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAAB9VBMVEUAAAAAACsAAFUAKysAK1UAK4AAVaoaGhoaGjoaGkAaGloaOloaOnoaQI0aWnoaWpkaZrMrAAArACsrAFUrKysrK1UrVVUrVYArVaorgKorgNQzMzM6Gho6Gjo6Glo6Oho6Olo6Ono6Wpk6eno6erlNTU1NTWtNTYhNa4hNa6ZNiKZNiMRVAABVACtVKwBVK1VVK4BVVapVgIBVqtRVqv9aGhpaGjpaGlpaOhpaOjpaOnpaWhpaWjpaWlpaenpamdlmGmZms/9rTU1rTWtrTYhra01ra4hra6ZriMRrpqZrpuF6Ohp6Ojp6Whp6ejp6elp6uZl6udmAKwCAVQCAVSuAgCuAgFWAqoCA1KqA1P+ITU2ITWuITYiIa02Ia2uIa6aIiE2IiGuIiIiIpqaIxP+N2f+ZWhqZWjqZuXqZ2ZmZ2bmZ2dmma02ma2uma4imiE2mpmumpoimxKam4cSm4eGm4f+qVQCqVSuqgCuq1ICq1NSq1P+q//+z//+5ejq5uXq52Zm52bm52dnEiE3EiGvE4abE/8TE/+HE///UgCvUqlXUqoDU1KrU/6rU/9TU///ZmVrZuXrZ2ZnZ2bnZ2dnhpmvh4abh/8Th/+Hh///r6+v/qlX/xIj/1ID/1Kr/1NT/4ab//6r//7P//8T//9T//+H///8caInOAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAgAElEQVR4nO1di38dR3m9CcRKHbeuoQ9qJQY3lh3XJn0QxymQqnVM3EgGKreljeM0kAoRYpkARS4twYBEiNxX9CzYklu5su7f2Xnuzty7j9mdb+Z+c/c7P8t7d3d25+yZs/Pe3V6fQECM3qgJEAhVIIMSUIMMSkANMigBNcigBNQggxJQgwxKQA0yKAE1Whr0bk/gd39UHezRtSc+MlYf/OH77aIjdBZ+Bu09Xu24AYPerQlOIAyirUGF1R79c++FymBkUIInvAzaf3DsOPv/f57v9T7+I56tsrWd3vGH54/vHOt9/HVtULX/0TWW5R7vP/qbXu+xzwFeAmGc4ZeD/vAx5kJmRgb269G1x99/eJ7//c4xvYUZVO+XBhX/92pyXgJBwbMOepznkr3P8Q3cir1Dd5n1Hp7vHfro0Q97h4RBjf3c1g+Ofeoj9t8h0KsgjC08DZqb7TbPTG/3mCuZQUXN8/bj73ODGvulQT/2J/8Kw53QAfjVQf+N+fHBMVFc73CDPjjG/394/pAIw0t1btBsvzjqtkv/FIEg4WdQnkuaBt0Rlctqg/b//fn6/ikCQQLCoIfEL2bAh+c//jzbIYt43mQqKOIF/uOvqZVEcIJvEW83gh57fYe1m1gj6feKG0nMpDtsn2r+Ewi18Gwk8Yww62bieaXsavrYMVmKW91M4ijdzWR14BMIZfAz6G+LfPCB6qi/LdtJh1gdlJmSt4NkR73e33/4PO9/4h31nyJ/EpwQYjaTaiQRCP4ggxJQgwxKQA0yKAE1aEY9ATXIoATUIIMSUIMMSkANMigBNcigBNRoZ9Ct0YHYBWWHjisZlNih5koGJXaouZJBiR1qrmRQYoeaKxmU2KHmSgYldqi5kkGJHWquZFBih5prAIMuTDtyWD9xk/2zNm1enXMk3pydG6/N2ens18QplyP82DmrVYJBBT3ZVStZT7aKThOqZNAy5AZtpGdrdr4GBWZXraSfQVtxDWHQlycm2IWsPy0WaxMThxnnjQtioS+D72ObJvhOFZCtPjnHDLo5e2TZgXhzdg682NpTL03LjYKP3L1+8svlx3iyc2PF1hZObd05unHxK4yV3rT+mZcOv8McYbMUxAtJeqdzPdn1E18wgii6asEzpJwjP0adQS0KuYYw6JFlRmXjRcFo4+JNpuuWlDdTXO6T/9QKz7nWjvzs6txCdbnanl09L762xvSTG3lmoH49zbYfWS4+xpOdGyu2tnHx2xfZXXNkee1wzmt6mKUUcrmIpHc615PVUqkgkq5a8PSWu7NLumksirkGKuJlWcBi5ky3pCU5jxxsLS/i5coWL+I/XVPva8+unhf/xdJXbVRJobiptcJr8WHnwEqt3WFV4o0L07waNMwrX5NCFpL0Tud6soqEDqLoyoUilzM2zlCqZACDfmtOXYnIuFleLwucCVE26SsVZbtSU66c5AX75uyzn68q4H0MWs9LsplWG0UOoH9J5QuvxY9dPSu9tv7MnExLk+HWEEspZCFJ73R2kzBPVE1XLgyD6ksSZ9CLQq5hclCeDV2Y1reSKh1zqH2qiM9WtkQj6U6wIr6el8pB5UZVim1Z2cLQMb7s3FiJkC8fFQblWZLFy15TOWgRSe90riebOXBa55Qqw7dz0PyYNdniWBtseGgKIQx6VOvE7nkesap05BzUvsyjfIVXndZPvHt1rqYh355dPS+jDromalvGL/ZXfIwnO0dWjMTJn/HC8qgRQN841poU8mYRSe90dkzaLIiiqxa5QdUx6gz6RIVcw7TieYZ9Z0K0iBeypp6Ri8t9m7OH3509fFMF1K34mp6K9uwceG3O5lQEj/yXkLXoGE92DqykMqLt89MXv6hb8QavorUikt7pXE9Wk5BBNiRdtTAMqo5RZ1iI24oPi26zK2xPQLKDVbKqFeTINapBeedYeQOjGXFIdhC84NkVsUJr0GIJUzMoBIhdUHbouJJBiR1qrmRQYoeaKxmU2KHm2s6g973gdTixC8oOHVcyKLFDzXUEBp2cnAQgTuyCsEPHNb5BJye9mBO7oOzQcSWDEjvUXMmgxA4113Gsg3qBsQM4y8Hi1Omlfn//+tTZe9lCIiXtEHAdx/eDeskK0/Zcme/vnr13sDjf3z7XVws87FJSkrqZQrDbv7GqF3uXV9UCDbuk0pkMOgCQgmnvynu8iN+7cq+//8aSWvRF/QGiAhENXkqSQUOwg6na712a5+5kpTx3plokoR26dCaD2gAyqJV15jkofu3QpfMoDOpThmbE9y5NTc3Dt5NhDLr/lrAk1UH9uaZqUJ4j7b2yBN9OhukcWRFF/MHijGQ3k2grHgFSNeguT/CVefA8Cqh7meXoZ1YD9INSDpqKQYULCmp5vu3kyeANbT/tyKAmRKa0PTXFcwPAXADIoLzkBG8n4x7qJINa2BXFFKtOCTfAjYbAGHT/+sxgcxmCHe7pdmRQAyunv89y0INbIt0hW6JArfj5fpJjNbjZoeNaW8Szop3350COhkDU8aQ/+/DtZMpBcXGtNejeK0s8F4UcDYHIQXnNmN84OPtBkSf6WBlUYGUecjQEqhUfQlYyKDKurgZFVwcNJCsZFBnXWoPysv3gO6uQoyHdNmhK8FEyZj+oMTkcgni3DerDjnLQKMRDG9QLwWds+mkXxKAiI0I6LDuOBvXi1sEcVAzIYJ12QwYd4NY9g8oBGazTbsigA9y6Z1DV34102g0ZdIBbVw2KddoNGXSAW1cNinXazSieiwdqJgeZDNhZg2KddpNuDhpmMmBnDYp12k2yBg00GbCzBsU67SZZgwaaDAj2yAfP1LF2fjvDJzIyaJjJgFDzQbfZfdPpdzORQVFPBtx79c35AA0PertdBOIBDIpuMuDBrR8szqPt/HaGn5Idb8Wjngy4PcPLdayd35HSmQyKdjKgeKtIQQ5KBm3MtX4+KHxLFPNIEuQTUzNYJ2CMi0EDTcPqgEH7spsJa+e3M7y4RnouPsAQWGcM2ul+0GiPHTdoiU6CorGcMLLivn3iGhQBnB6ac22JgvaAlBgFMorieAOf38dhSeWgEfpBm07DQmJQD1nuY89B4z7P5cU0wkhS02lYZNDk2cFxjWXQJi1RMmjy7OC4xjJok5YoGTR5doBcEY7Fk0GTZwfJFd9QZ1yD0jhXAHaQXDtuUBrnCsEOkmu3DZrsOJenKsFjMOGnZLcNGuh1A9g76ikH9SEOO9RZTTzQ6waoiIfjOkKDlgDWoHWxhXndABkUjCvCHLTVyUrglIMmWAfFyg7+e1hk0IbjXKCoY9dUO0eEMyj897DIoDTO1QxVtJq8AiPCnT4OBh0vdo4IZtAmr8AANWiNXGRQJOwcEcygAb6H1fUifrzYOSJsEw72FRhk0IYnhOPmczKfVAtv0PF+/SISgyJgt3eJV+hSmsoS4BUYkQzaoH8MuUFBUcmOF5KsUpfUVBb4V2BEMmiD/rGIFsBt0N1zfaO8TGkYwUlJ1+gguNYaFOv34pvLGjl/z0dgU5rKYsMnoWLNqEf6vfgqlAkGGUetQXllLsGpLDa8mJaXM0241hoU6ffiW8ga1aD712f6KU5lseHFNJJBBTC+IlYCaRNu7xKvuTd6ZDteDdkdTRNn6ILaH64puBoUax20SROucfpUoNoC0p8pPrJto2ni2FcUpw6K9RWxEo2mODROnwpUW0C+fnE+waksNpomzkB0XgcrOPWDInxFrMLIpjiAjyTBsnPRrj1X16TyOlgh4Tcsc4xRE44MWsg1cYMK4G3CNdAOZRGPAONhUKxNuAbaoTSojxQYX33jytznYJsI7iZcE+3GzqAVVQ0XaAqJGxR3E66JdmTQYq6pG3Rs2JFBi7km/L34UvjISgZ14OoGqoOmya4ESOb72/BTkrqZgqATc638uLomldfBCuNo0CTZkUGLuZJBkbAjgxZzJYMiYUcGLeZKBkXCjsbii7mSQYmdhfSe6kxPZGLXnh3gI9KR+0FxDybiZmcBNzt037Z3NSi690YmxM4GbnZwT+9O+p5AwtWg6N7ZkxA7G7jZwU39jpyDQj4XDw/c7Gz4JHrMHNSba9w6KLr3RibEzgZudujKouY5qD/gszjc7CARmp099dsPIFzb1UH9AC8ybnaQCM7O6g/xQ1SDoruzLOBmBwnc7GxENSi6O8sGbnaAwM3ORlyDEgijABmUgBpkUAJqkEEJqEEGJaBGAIPKV3Y6YO/y6mDnpXqdYhC48eLzTvSvqZlgZDI4q1UCqO5fJ9STraLTiioZdAC5QeMkva9Bo8LPoK0QwqBvi49YqW9Z7YpXdPOOyjM5dbFPvNuTbc0/enV6iRn0YBGqR7M5L7b23JvzcqPgI3fvXXmv/JgorNjaCh+L2L/xXf2qH87r1TfPfHB5tW+zFMRhSbqT3bv8dSOIoqsWPEPKOfJj1BnUohAhDHr2Hn8x+xtL+v3sfIxnxRzqUfvkP7XCc67ds7+6tbQSqlyt58XXdpl+ciPPDNSvS+KLHcXHRGHF1vZv/OIGu2vO3ts9k/OaH2YphbwHStKdrJZKBZF01YKnt9ydXdKqsShGoCJelgUsZjWFgy84jxxsLS/i5UqfF/FfClbvq+fFf7H0VRtVUihuaq3wWgKzUmvbrEq8f32eV4OGeeVrUkhYku5kFQkdRNGVC0UuZ2ycoRQBDPrzJXUlIuNmeb0scORr6PSVirJdqSlXrvCC/WDxtbfCFPAuvCSbebVR5AD6l1S+8FpCs9Jr/G3SIi1Nhv0hllJIWJLuZDODiiCarlwYBtWXJM6gF4UIk4PybOj6vL6VVOmYQ+1TRXy20heNpO1gRXw9L5WDyo2qFOtb2cLQMXFYiZBvnxMG5VmSxcteUzkoeO7pRjZz4LzOKVWGb+eg+TG7ssWxW9bwCGHQc1onds/ziFWlI+eg9mUe1R9e3bv84a2lYA35el5GHXRX1LaMX+yv+Jg4rBiJK7/iheU5I4C+caw1KeQqKEl3ssZdwoIoumqRG1Qdo86gT1SIMK14nmFvT4kW8UrW1DNycbnvYPHMh4tnVlVA3YoP1r3jwOtgMacieOS/hKxFx4RnJZURbZ9fvvEN3Yo3eBWtgZJ0J6tJyCD7kq5aGAZVx6gzrMRtxRPCAeqxgUhwaQXVIKpBeedYiLq7L3DyKmKF1qDFEqZmUAKhKcigBNQggxJQgwxKQA0yKAE1yKAE1Ghn0K3RgdgFZYeOKxmU2KHmSgYldqi5kkGJHWquZFBih5orGZTYoeZKBiV2qLmSQYkdaq5kUGKHmmtIgy5M14VYP3GzLfFadvWxOxEbosg2DG7bvDrnzi4Erc3Z6ezXxKnSw0HT2UvfAdYVXMmgTSmO0qBltPKkrlQUNJ3HwaAvT0wwCutPi8XaxMRhJt7GBbGQWD/xBb5v4+JXJp6cqzrVMPFadvWxq406drWPLZ6c4+ksjzRSXGxguyf4Yeq8IjQz6ObskWU3duC02J6nXpqW4UQoecT6yS8PRvFjyHT20FctOOvadA5q0CPLTMeNF+e4nBsXb27dOco2nhILneSnttaOLG9cOLK8dtgtM3VmVx+72qhjl/v4bb125CfZkbkT8g35eWXon12dWzjlyg6aFg+wxjwiw/Ht6pfS1ojiNyHTuaW+xoKzrk3n0EW8LAgYVX4lKpU5cQmRI7DLuzBtFJPVcGZXH7veKGNX+2TKq/TP1jXkhsG9m1c/fcqZHTQtfiCzbx7OOEKt6Sj+HDKdW+qrF5J1fTqHNOi35tRliJyelQUsoxclZFacmyI61mmc2dXHrjfK2NW+9ZPLipg80jSo3mDsFaE3Z5/9/LIrO2haclsWjt/u+teWqhLoKH4NMp1b6muwq0xyTSFwDspv7QtZjUmVODkMg4bIQWti1xtl7GpfllWpI42sKtswuJcdfce5iAenpXLQLJxxxEAUoOncUl9jMfIcdOGolnL9mTnGlLMVdY8jyypEVsQfNTZWw5ldfexqo45d7uOqrZ94JzvSzqrkhvy8MvS7V+fU/eXADpqWUQddE9VC4xf7M6P4dch0bqmvuRh5HfRlkd3fmRDttYWJvDWqQ2Q56BeDtOJrYlcbdexqX9ZclkcaTpAbNmcPvzt7+KY6r27Fq2zEgR04rc3ZnImgkf8Sds2j+CZkOnvpm7GuTWcUI0mqNu0EeHZNYo/IDpKWO7sA6dzuQjSF0RiUd54Z1enIBm0Y+0DwYOwC0nJnB5HOHqk7zBVFDtqGOLELwg4dVzIosUPNlQxK7FBzJYMSO9Rc2xn0vhe8Did2Qdmh40oG7Ty7/DtV/DXcaoGG6wgMOjk5CUCc2AGxE580kt8I2D7XVws8XOMbdHLSi3krvu4Q7ILGgE27XW7HFfFpE/X9jfwjAQi4jqNBiV1TdiwX5Z9Xyhd9eau6+qEIQLc6GZTYsXJdfkmGOVMt8HCN//pF3IVo+DqoF4JIt399hjWVBnNQDgRKUg46FIHXwQmy45+klZ+mA62DUis+HQugZif9KYp50YqfgWrFJ2vQzlkAN7tt8YGjeeoHBSZO7IKwQ8eVDErsUHMlgxI71FwTbiSJxiavQZ1ZRVdzwj2+HSedUzUoVDfTrvySs2qCgo0g3/e5ezQ75OPbUdK56wZdOf19loPy78v3s048NAZFPr6dEpI1qCziWeHJy1K4EWR2Br/DMyAe33aGTzonm4OC1kFZOcpzUbgRZJgctI97fDtOOidrUKiKflZqrswDjiADGRT1+HZK6VxhUOwtUcOg2OqgyMe34xg09GQR9C1Rnua89Dz4zirkCDKEQZGPb0cxaPDpduhborof9PQSaP4OYVDk49vjYVCONFuiPrKCNZICsSODmki0JerDrpMGDTMmF37CcqotUS92HTRomDG58DlooJYo5aBeEcCzCzQmF9ygoVqiXTcoQgQZkwv+VGeolmjXDerHLlgdFHxMLtnn4qkO6hVBCHZhxuRCNJLu9nov3H3ioxRFBkPoyRgItcM8JmcZ9PYT/3n+hUfXDoUVmXJQnwhCsEM8JmcZ9OH5F9i//s7j74cUmeqgXhGEYId4TI4MOszP5+Dg7NIZSQpRxN/lRfzD88eDEu+IQTGPzjjDi2sAg/Z3egz1/iSD1rJDPTrjDB+uQQwag3gnDIp7dCZKOpNBMcuKe3TGGQiUtBtJPQFqJAGwwzw6Ewkgt9JwDvrws6/XHoVbZB92sI0kDoSjM87w4hqsiN9xGEryAFgxJSwAP2cd3qBUB/XgWmTQNIp40U6Gf2IK0qDgozNkUI7b9TmoF23IN4sEeG4SuB8UdHSm4wZVjaTHEqmDimYI9BNTuCeLdNygiYmsC1HQJ6aQD3VSIyk88bA5KBJZcSf6IDA3NzOD6k7QdPpB91DXQRMyKOrmZsIz6rkjA7y7A/czSQFqyLibm6N4eRhkO7lBwTQJijp2uLWzgbm5aRn0wbEIRfzIClHQzGfsDIq1uWka9NG144+uiTnLCYpcz44MWkYJc3NzYEZ9//Zxl6FOBMSbsyODllHC3NwcNOjdQ6GHOsmgPghmUKzNTfupTuFOh+eOERBvzo4MWkYpiX5QDlYJ7d82hjoxE29ugbgGTVQ7Gwi4VnUzoe7AbS5rVIOmqp2NMhIRO+zykaQ/HmSHuwO3OWANWr17TLQrI9Fcr3I4G/T8cP8n5g7cCiCQNVntbCBQ0iji+Wi83QWKuQO3AmXRAqiZwcmgCWpno4wEjIYS7gbti5eHmU/FY+7ArUBZtP5i5miXg+LXzu3ioU7kcLLBRhLLRvNeJswduBUoizZi1T5Z7dyUbHyiCjTKQQXyjnrMHbgVKIs2ukET1M5NycYnqkBDgw7loOMzX4j6QRtfZRkJEAkVfOqgmImPGztH4DBoxIyoshXfmHhjBSrQMYPGTHRnIOBq9oM6PM5ZQ7yxAhXomkFxsEPHNTfoHzV4nwgC4goN3sCJxAK42aHjCvrIR8ysX6HBGziRWAArO6S3euIGbfIGzpFboPqEcNzanQzprQ5rUDDWfUcLNHkD58gtIIFGOxtYb/XEDdrkDZyjtgBudlhv9cQNKuD4Bs5RW6CGXfTqkQ2st/p4GNStYBqxBRJg53qrR+TazqAlgCXuEiPW76NVoCza1qoXoL1B0U1sSfjNIgJIv4/WXLtRGxTrrZ66QXGzQ9q3WAiktzoZNCQ7pH2LzvCRggyKnx3WvkVn+EhBBsXPrlHfYvQGZhpKkkEDsgP/kBeS+aAxuZJBQ7MD/ZAXGTQZ4smwQ9i3GAmBPoXognEWGbC1grVv0RkIuI6jQfGwQ9q3mFI6k0GJHWquZFBih5orGZTYoebqbNCE6lHErj07dFxdDZrSS1hxs/MDitcvxlTS1aAp9eURu/bs0JWUrgaFfAlraPjJ6nV48uwgS0oQrq4GhRxP7rYFcLODLCmjGhRyPLnbFsDNDl1JOYo6aLctgJsdupLSvRVvjif7AcONWY5us7NLSj/EnSxite780G0L+CE0O7uk9MMIZzP5odsW8ENoduhKSjLoIDrODltJOQqDEgjOIIMSUIMMSkANMigBNcigBNQIaVD54pcqQPW4tYu9AjmxIYpsw+A29QaR0dHiUzz0r6kZjwgawOtCBHLWFSCD1gCVQS0WJoEsqUMqamMcDPo2f/FLf++SWOyKF73xfrYzmYZ7l7/O9+3f+K54+jFy7Gqjjl3tY4vTS+JbxeJII8XFBvE6GxZQnVeEZgY9WHTsPYSnxfY89+a8DCdCySP2rrxXHgUAPC5ELTjrWgQ16Nl7/Fu/byzpT/7yIYoVc6Ri79IMn56wf/3svV1Y+VxiVxt17Cvqy6/zjNJ/Z0fmTsg35OeVoX91a2nFtWAFp8UD7DKPyHB8u/qltC2KAgItL8RYcNa1CF3Ey4KAUVUzEPiCE5cQOQK7vOvzjYpJoNj1Rhm72idTXqV/tq4hNwzuPbj1JeeKHzgtfiCzbx7OOEKtDUUBgZYXoheSdX00IQ368yV1GSKnZ2UBy+hFCZkV56aIQJWzBrHrjTJ2tY9P51FOEEeaBtUbjL0i9MHia2+5Dg+C05LbsnD8dte/+qpKMBwFAFpeiMHOKckD56D81r6e1ZhUiZPDMGiIHLQmdr1Rxq72ZVmVOtLIqrINg3vZ0dvORTw4LZWDZuGMI6qi8EXLCzEWI89BV85pKfdeEe8g5H8romakQmRF/DljY7TY1UYdu9zHVdu7/EF2pJ1VyQ35eWXoD28tOd9f4LSMOuiuqBYav9hfYRQQaHkh5mLkddC3RXa/PSXaaytTeWtUh8hy0G8EacXXxK426tjVvqy5LI80nCA3HCye+XDxzKo6r27FO/fvwNM6WMyZCBr5L2HXoigA4HUhGetaoBhJgprCnWLspUBKqzn8LmQ0BuWdZ0Z1OnJaNIx9IHjXaDUHaOqiyEEJhDKQQQmoQQYloAYZlIAaZFACapBBCajRzqBbowOxC8oOHVcyKLFDzZUMSuxQcyWDEjvUXMmgxA41VzIosUPNlQxK7FBzJYMSO9RcyaDEDjXXKAZdP3ETLBg0OzvSfE39cqTejF3VSTevzjXiP8jbk51XOpdQaiWlpkAGLYmUDNo8navJYTHoxoWJJ+e21p+emJje2rj4FbbCthx+h7FjDNc/89Lhm3w94yq2iNBis7WvijiUrOsnvsCZbsmIuYjs11N/Oie319Jpzo5FlieVFGhLycW1ePfq3ObskeVcTM7q5Jc1RxY4Z8oFFbsM6YSeaxOFCv8fZDoPYHOW8X9mbmvtyDKIlJoCuEE50bUjP31xjjPcuHBkeY2pc+Km1vNppvPCqa07RzP52JYNGZqHsfZVEYeRlcd/iouqIlYU1p6cU9vhc1B1oRJKIC0A04LloIyAhmIluUhplxcyYuKQbE2H5fnCzUKFfwyYzkO4w6JndxFbgEipKYAb1MwdmEGF4oZB+W3FxOIS2uHZFu5oa18VcSBZdU6kIua/WPSS85blJSc4sJOxaI2kQLkAbO3TuT9zVjkXzo9tN7bJhRGW/7SvUEYQ1KDrJ5e/9dWj7GJgpNQU4A16UhZPC7yUEUotTA8Y9MLEhCjXDPlEaJHlmvuqiAPJmhlURiwKzeWgBpUXqsIrgXIBWAn07Od1Ab+Vs9pSzCRhm58yaB6W1xhyEXOFgxp04+K3L75z4tsXgaTUFALloDxnUHf1cA5q5ZDSstNa5crc0yQOJGtm0Iu6Ih86B7WLeClQLgBfu5NloTkrhxw0D8uxltVjc4WDGnRr4c9+f/PqV49uwUipKQSpg66fEG2iZ5jwR1Xtg6fEHZV3yEqUId+6DK1rLdm+KuJQsur4F8y63NqTAQ0qL1QiF0gLwBLUaMhb9U0p7U25zRA0r76rsFzBIoW/CZjOw1ibkLVQGCk1hVCt+DsTE0+9NL3x4hf5yubs4Ztsw7Oq9iVDGPKp0DyYta+KOJSsOvlU54P89RvZbc85NTibAzt2oWYOKgRSAiiDmvX4jFXOUTWHc0EVzTysrDAMK/wXkOk8rCRvwx++uQUjpaYQth/Urq2DAFrWQjTMN9uzCyCQHztoJVtLqSmMzKC8Y66uQVRFPJism7MtWDVlp6/+r4oFaitOzUmCpXMJfKTUFGgsntih5koGJXaouZJBiR1qrmRQYoeaazuD3veC1+HELig7dFyTNWj+nSL+ymnrK+cI2ClsT8l3DKNjJ17QbGuHVMlUDSq+zyPfEa++IpR/n8eL3OTkpD87DfkZC0B2QAbd5beNrR1WJVM16O45kf78YxHqwxb5W9t9Tj856aWrLZP6sgIcOyCDrpz+Pn+VvaUdViVHYVCfG8u0AMtF+eeD8gXbxlVpdUkKk74nMCG+CTTfh2PHzgBCTH5hwdIOq5IJG/RgUX7QhOmpFgDsQHNQVgfhuSgcOzDtuEFt7bAqOYrXL8LkAvvXZ/r9ofuew0dW2Doox8o8IDtIg9bkoEiUTDYH3bvEG6Cr3kIAAAqDSURBVCDgNSf4jpysooxHO2lQqoOWUvc52PKnKOZF23MGWTtZgJeXB99ZhWQHaFBbO3AlO27QbfEpnnmsvXc5S/VxNSh2gAYN3A/acYOGY4d7JCm0dnBcyaCB2JFBYbiSQQOxI4PCcCWDBmIXdzpGU4ANIjjBRwoyaCB2lIPCgEaSEkVK2vlR7XZHfTB2lIOiUpIMOhQBanYJGZRy0DDsYA3K51ci7KiPkM7hG0nB5qx3yaDbTELICctk0AzB5qx3yaB7r745DzphmQyaIdSc9S4Z9ODWDxZRTlh2hI8UUfpBQ8y0Bp0VjvexNIHtGV7yIJywLMip+Ta2hElNFgkyZx1KZPHgF9rH0uQtdOXegZWDYtEuF5ElqyVhUg/NBZqzDiOyfPAL62NpEjKPmsFbPeIpakuITsnKVnygOeuQs8LBH0sDfGaOg+dICCcsK3BWtoSQVTkQlBs03Jx1yOdqoB9LA31oro+8H1RIZksIWZULnIOGm7MOOSucA/KxNGiDDsOHHbBBd7MUzSSkh+buhzAouke9sGunhJvJfqF9BUbiBoV/LA38sWOU2gnI5pEtIT00dx82B4V/LK07E5ZVUW5LmFQ/aCl8iHdpJCk97eC4kkEDsSODwnAlgwZiRwaF4UoGDcSODArDlQwaiB0ZFIYrGTQMQAf4dsU8IYSDHDEAo+Q4GtSLG+j7QS+vpjbZGzKd6aG5AOzAR5JwTrSJks4jNGgJJkHRmoaPLuAGZVmn0wwhJNrBKYkxBwWdnlVik/bs3ODlz+Fnki6dXnKbUY9EOxseSqCcLIJEZA9Z7oO34l1nCCHRzoaPFEBlERl0KAKvg4fhONcKiXY2fKQggzZl56qM18EWVNnuNENoBNoVPi031pNF4opc8BrrSnauyngdbKPBXKsRGLToaTm4LrHOG7Tgc37V7FyV8To4De0ECp+WG+8JyzFFLvqcXzU7V2W8Dk5CO4nCp+XG+0tz8Yt4rM8iNgesdi6BCp+WQ/f4YeIGhX8WEbYfFKt2GQaflhvvh+YQ5KAV7JwAPpKEU7sMg0/LUR3UGU4GxSordu04Cp+WG++H5uIbFKus2LUTKHxajvpBXTGaftAuGbQ1VyfEMGhTCyARub0q0Aa1X1KdgnY22gsRxaCNu8KRiNxelfuwrXj7JdVJaGfDQ4kIBm3eFY5E5PaqiAi8DrZgv6S6RjtQuLALrGSsIr5JV3j8zuZC+MgadrpdlXagaK0dnJKxDNqkKxxJDuoXLfT7QWcSnrDsxQHmRmmeg3LgFrmEnROA7nsN8yXVSWhno70Q8XLQjtVBYQ1qvaQ6Ce1stBcinkGbdIUjEbm9KtCPHVsvqU5COxvthaB+0Aq0VwXYoAMvqU5BOxvthaCRpObsnABcB3Vnh0Q7J65OIIM2ZecEMqgDVyeQQZuyc0J4g5ZdbvtDw50MgZKpGxT6U4hdykHVTIGEP4VYijJO7eQsRosnE6vZOaFDBlUzBUJ9CpEMygH+KcQOGVTNFAj1KUQyKAf4pxAhR7KLgUY7DiZaqE8hxhjqLEWZyKBwERn9pxDdtWuVECVwNSgfQgj1KUSUOWh0gwpg/hSiOdZRrV2rhCiBo3ZipoAtITolEy/iBRB/CtGc841OOzUSa0mITsnEDQr+KURYg1pzvrFpp/w5lp9CLNMl/smgP4UYoohHOmFZzxTo0KcQaSRpiIsx5xuAXUrvqEdpUFBUE8ctawY7B/VlRwaNQLxbX/nYc62DuvLzOThuOnsJSQYt4xbAoIBfs0/JoDBcx9GgXnBsYbjCuR90HLQbAIiQ42hQYteeHTquZFBih5orGZTYoeZKBo3Nzg9x32+OQMkOGXQMemmR5KAxlSSDBpE1We3clGx8ogqQQbNoyaBA6RxTyTExKNYZlwXwufgIBnVSEqNBUXc2u824jChrQtq1UdLhRM4AMijkxwbhRcY92o1buxZKxrzVXQ2K+2ODuL80h1s7G+iUdDUoOuIWIGdcdu32sYFOSVeDoiNuAXLGJTw73NohV7J5DoqEuAXchShu7ZAr2a4O6gf4Us6ecekHeHa4tbOBTkn3Vjwy4jasjhw/dO32GQA2Jdv1g/oBdzuha7dPOIxwwrIfcItM7KCQrEEJBGeQQQmoQQYloAYZlIAaZFACakQxqGMvNVRndiPYkeZr6lcQTlUnVW/kBjxj82AgAJKSDFoSKRkUDMgMun+dv81PfuJk/8Z32QrbcuaDy2K4b+/VN8+s8vWMq9giQovN1r4Y2Lv8dfExFhmxeJXS9ann/mFJboeiI4XQX37Jk2pgO9Piw1tLB4tZt75ideU9zZEFzplyQcUuQzqh5+5UdIX5pFf+NvHds/dApQQ3KCe6e/aX/BMnl5kYZ+/tMnUur2o9+UtTV8yRP75lX4bmYVbgRgXdsHdJftBdRqwo7J5eUtuB8hwlhHGhhduZFiwHXZnJjlOsJBcp7b2VjJg4JFvTYefF4H90hbfZefnbRmdgpQQ3qJk7MIMKxQ2D8tuKicUltMOzLdzR1r4YUMRUxOol2JKz7SUvKCHEzxuWQQe3H9z6Uu7PnFXOhfPjL5PPt8mFETafOqWvMI8gmMJ7V+79/Hvn2MXASglv0CuyeFrhpYxQamV+wKD8uyentYSStggtslxzXwxog8qIRaF5L4BBpRD5hZZuP1h87a1s3D5n1VfM1PvybhUYNA/Lawy5iJEU3r/xixsfXP7FDWApA+WgPGdQt+twDmrdv9Ky81rlqLmnjj+POFgOKoXIL7R0O1vbzrLQnJVDDpqH5djN6rGxFF75x788uPW9c31YKYPUQfcuizbRK0z4c6r2wVNiW+UdshKlwiv2PLSutUDN/HGCjn/FrMvtngYv4s9lFUd5oWXbWYIaDXmrvimlXZXbDEHzyqUKyxWMr/DulKyFwkoZqhW/PTX13Jvz+298g68cLJ5ZZRteU7UvGUJBbJGheTBrXwzo5FOdD/LXH2S3PecEEIsSQl2omYMObufuNA2sWeUcVXM4F1TRzMPK8ty8whgKizb8mdU+rJRh+0Ht2no6AMo3c5QJkapA7vCVcmQG5R1zsRtETjhYDMBqUAh99f9ULBCIOKNXGEJKGosnoAYZlIAaZFACapBBCahBBgXEo2uHxPLuIWvzg0+8PvjT2ESoBBkUEncff7/PffpCWQAyaFOQQSEhfffgk+9XByCDuoMMCorbx/uyhH9wrNfrHWde/dve4//C3KjXP/G1Xu+Jj4RBH13r9R4vtTJBggwKih1mPl7CPzz/gijwHxw7JLLLfP2Jj3hNlW0SFda7LDyhCmRQUDz87OuihP9f7jvmwgfHXhDLwXX2b4fnnsK4hAqQQWHBynjZht9hRfpjr4u6pvhPrX9SupJtutsTOD5iwthBBoXFzhP/xdvwD88/9rrKKVURr9YNg1Lp7gIyKCwefvbvuAd5XbS/k+egg+t802PUkHcAGRQYt3/rUF94kTXcDYPqdbORxExLLq0DGRQYOz3R7LnNapx/L4pyWQfN1r/W6x3qZ91M5M86kEEJqEEGJaAGGZSAGmRQAmqQQQmoQQYloAYZlIAaZFACapBBCahBBiWgxv8D97s772ky5d4AAAAASUVORK5CYII=" /><!-- --></p>
+<p>Create dummy variables for categorical variables, scale the data, and
+remove zero or near-zero-variance predictors.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co"># Function to process dummy data</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="co"># This function takes a data frame, extracts the abilities, types, moves, and egg groups, </span></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="co"># and creates dummy variables for each of these categories. It then combines these dummy </span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="co"># variables with the original data frame, and removes the original variables.</span></span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a><span class="co"># Args:</span></span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a><span class="co">#   data: A data frame containing AT LEAST the variables &#39;abilities&#39;, &#39;types&#39;, &#39;moves&#39;, and </span></span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a><span class="co">#        &#39;egg_groups&#39;. Each of these variables should be a character string with elements </span></span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a><span class="co">#        separated by commas.</span></span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a><span class="co"># Returns:</span></span>
+<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a><span class="co">#   A data frame with the original variables, where abilities&#39;, &#39;types&#39;, &#39;moves&#39;, and </span></span>
+<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a><span class="co">#   egg_groups&#39; are replaced by dummy variables. Each dummy variable indicates the </span></span>
+<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a><span class="co">#   presence or absence of a particular ability, type, move, or egg group.</span></span>
+<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a>dummy_data_processing <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb19-18"><a href="#cb19-18" tabindex="-1"></a>  abilities <span class="ot">&lt;-</span> <span class="fu">get_all_vars</span>(<span class="st">&quot;ability&quot;</span>)</span>
+<span id="cb19-19"><a href="#cb19-19" tabindex="-1"></a>  types <span class="ot">&lt;-</span> <span class="fu">get_all_vars</span>(<span class="st">&quot;type&quot;</span>)</span>
+<span id="cb19-20"><a href="#cb19-20" tabindex="-1"></a>  moves <span class="ot">&lt;-</span> <span class="fu">get_all_vars</span>(<span class="st">&quot;move&quot;</span>)</span>
+<span id="cb19-21"><a href="#cb19-21" tabindex="-1"></a>  egg_groups <span class="ot">&lt;-</span> all_data<span class="sc">$</span>egg_groups <span class="sc">%&gt;%</span> </span>
+<span id="cb19-22"><a href="#cb19-22" tabindex="-1"></a>    <span class="fu">map</span>(., <span class="sc">~</span><span class="fu">str_split</span>(.x, <span class="st">&quot;, &quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-23"><a href="#cb19-23" tabindex="-1"></a>    <span class="fu">unlist</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb19-24"><a href="#cb19-24" tabindex="-1"></a>    <span class="fu">unique</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb19-25"><a href="#cb19-25" tabindex="-1"></a>    <span class="fu">sort</span>()</span>
+<span id="cb19-26"><a href="#cb19-26" tabindex="-1"></a>  </span>
+<span id="cb19-27"><a href="#cb19-27" tabindex="-1"></a>  <span class="co"># Create Dummy Variables for abilities, types, moves, egg_groups</span></span>
+<span id="cb19-28"><a href="#cb19-28" tabindex="-1"></a>  data<span class="sc">$</span>abilities <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(data<span class="sc">$</span>abilities, <span class="st">&quot;, &quot;</span>)</span>
+<span id="cb19-29"><a href="#cb19-29" tabindex="-1"></a>  data<span class="sc">$</span>types <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(data<span class="sc">$</span>types, <span class="st">&quot;, &quot;</span>)</span>
+<span id="cb19-30"><a href="#cb19-30" tabindex="-1"></a>  data<span class="sc">$</span>moves <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(data<span class="sc">$</span>moves, <span class="st">&quot;, &quot;</span>)</span>
+<span id="cb19-31"><a href="#cb19-31" tabindex="-1"></a>  data<span class="sc">$</span>egg_groups <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(data<span class="sc">$</span>egg_groups, <span class="st">&quot;, &quot;</span>)</span>
+<span id="cb19-32"><a href="#cb19-32" tabindex="-1"></a></span>
+<span id="cb19-33"><a href="#cb19-33" tabindex="-1"></a>  abilities_dummy <span class="ot">&lt;-</span> <span class="fu">lapply</span>(data<span class="sc">$</span>abilities, <span class="cf">function</span>(x) <span class="fu">table</span>(<span class="fu">factor</span>(x, <span class="at">levels=</span>abilities)))</span>
+<span id="cb19-34"><a href="#cb19-34" tabindex="-1"></a>  types_dummy <span class="ot">&lt;-</span> <span class="fu">lapply</span>(data<span class="sc">$</span>types, <span class="cf">function</span>(x) <span class="fu">table</span>(<span class="fu">factor</span>(x, <span class="at">levels=</span>types)))</span>
+<span id="cb19-35"><a href="#cb19-35" tabindex="-1"></a>  moves_dummy <span class="ot">&lt;-</span> <span class="fu">lapply</span>(data<span class="sc">$</span>moves, <span class="cf">function</span>(x) <span class="fu">table</span>(<span class="fu">factor</span>(x, <span class="at">levels=</span>moves)))</span>
+<span id="cb19-36"><a href="#cb19-36" tabindex="-1"></a>  egg_groups_dummy <span class="ot">&lt;-</span> <span class="fu">lapply</span>(data<span class="sc">$</span>egg_groups, <span class="cf">function</span>(x) <span class="fu">table</span>(<span class="fu">factor</span>(x, <span class="at">levels=</span>egg_groups)))</span>
+<span id="cb19-37"><a href="#cb19-37" tabindex="-1"></a>  </span>
+<span id="cb19-38"><a href="#cb19-38" tabindex="-1"></a>  <span class="co"># Convert lists of tables to data frames</span></span>
+<span id="cb19-39"><a href="#cb19-39" tabindex="-1"></a>  abilities_dummy <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, abilities_dummy)</span>
+<span id="cb19-40"><a href="#cb19-40" tabindex="-1"></a>  types_dummy <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, types_dummy)</span>
+<span id="cb19-41"><a href="#cb19-41" tabindex="-1"></a>  moves_dummy <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, moves_dummy)</span>
+<span id="cb19-42"><a href="#cb19-42" tabindex="-1"></a>  egg_groups_dummy <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, egg_groups_dummy)</span>
+<span id="cb19-43"><a href="#cb19-43" tabindex="-1"></a>  </span>
+<span id="cb19-44"><a href="#cb19-44" tabindex="-1"></a>  <span class="co"># Add prefixes and replace dashes with underscores</span></span>
+<span id="cb19-45"><a href="#cb19-45" tabindex="-1"></a>  <span class="fu">colnames</span>(abilities_dummy) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;ability_&quot;</span>, <span class="fu">gsub</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot;_&quot;</span>, <span class="fu">colnames</span>(abilities_dummy)))</span>
+<span id="cb19-46"><a href="#cb19-46" tabindex="-1"></a>  <span class="fu">colnames</span>(types_dummy) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;type_&quot;</span>, <span class="fu">gsub</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot;_&quot;</span>, <span class="fu">colnames</span>(types_dummy)))</span>
+<span id="cb19-47"><a href="#cb19-47" tabindex="-1"></a>  <span class="fu">colnames</span>(moves_dummy) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;move_&quot;</span>, <span class="fu">gsub</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot;_&quot;</span>, <span class="fu">colnames</span>(moves_dummy)))</span>
+<span id="cb19-48"><a href="#cb19-48" tabindex="-1"></a>  <span class="fu">colnames</span>(egg_groups_dummy) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;egg_group_&quot;</span>, <span class="fu">gsub</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot;_&quot;</span>, <span class="fu">colnames</span>(egg_groups_dummy)))</span>
+<span id="cb19-49"><a href="#cb19-49" tabindex="-1"></a>  </span>
+<span id="cb19-50"><a href="#cb19-50" tabindex="-1"></a>  <span class="co"># Combine</span></span>
+<span id="cb19-51"><a href="#cb19-51" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(data, abilities_dummy, types_dummy, moves_dummy, egg_groups_dummy)</span>
+<span id="cb19-52"><a href="#cb19-52" tabindex="-1"></a>  </span>
+<span id="cb19-53"><a href="#cb19-53" tabindex="-1"></a>  <span class="co"># Drop original variables</span></span>
+<span id="cb19-54"><a href="#cb19-54" tabindex="-1"></a>  data<span class="sc">$</span>abilities <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb19-55"><a href="#cb19-55" tabindex="-1"></a>  data<span class="sc">$</span>types <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb19-56"><a href="#cb19-56" tabindex="-1"></a>  data<span class="sc">$</span>moves <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb19-57"><a href="#cb19-57" tabindex="-1"></a>  data<span class="sc">$</span>egg_groups <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb19-58"><a href="#cb19-58" tabindex="-1"></a></span>
+<span id="cb19-59"><a href="#cb19-59" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb19-60"><a href="#cb19-60" tabindex="-1"></a>}</span>
+<span id="cb19-61"><a href="#cb19-61" tabindex="-1"></a></span>
+<span id="cb19-62"><a href="#cb19-62" tabindex="-1"></a><span class="co"># Apply dummy data function, remove generations 8-9 and the habitat/pal fields (since they have the NA values)</span></span>
+<span id="cb19-63"><a href="#cb19-63" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">dummy_data_processing</span>(all_data) <span class="sc">%&gt;%</span></span>
+<span id="cb19-64"><a href="#cb19-64" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(generation <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;generation-viii&quot;</span>, <span class="st">&quot;generation-ix&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb19-65"><a href="#cb19-65" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>habitat, <span class="sc">-</span>pal_park_encounters_base_score, <span class="sc">-</span>pal_park_encounters_rate, <span class="sc">-</span>pal_park_encounters_area)</span>
+<span id="cb19-66"><a href="#cb19-66" tabindex="-1"></a></span>
+<span id="cb19-67"><a href="#cb19-67" tabindex="-1"></a><span class="co"># Identify constant columns</span></span>
+<span id="cb19-68"><a href="#cb19-68" tabindex="-1"></a>constant_columns <span class="ot">&lt;-</span> <span class="fu">sapply</span>(df, <span class="cf">function</span>(col) <span class="fu">length</span>(<span class="fu">unique</span>(col)) <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb19-69"><a href="#cb19-69" tabindex="-1"></a></span>
+<span id="cb19-70"><a href="#cb19-70" tabindex="-1"></a><span class="co"># Remove constant columns</span></span>
+<span id="cb19-71"><a href="#cb19-71" tabindex="-1"></a>df <span class="ot">&lt;-</span> df[, <span class="sc">!</span>constant_columns]</span>
+<span id="cb19-72"><a href="#cb19-72" tabindex="-1"></a></span>
+<span id="cb19-73"><a href="#cb19-73" tabindex="-1"></a>labels <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">select</span>(name, generation, id)</span>
+<span id="cb19-74"><a href="#cb19-74" tabindex="-1"></a></span>
+<span id="cb19-75"><a href="#cb19-75" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb19-76"><a href="#cb19-76" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>name, generation, id) <span class="sc">%&gt;%</span></span>
+<span id="cb19-77"><a href="#cb19-77" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">held_items =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(held_items), <span class="st">&quot;&quot;</span>, held_items))</span>
+<span id="cb19-78"><a href="#cb19-78" tabindex="-1"></a></span>
+<span id="cb19-79"><a href="#cb19-79" tabindex="-1"></a><span class="co"># Convert categorical variables to dummy variables</span></span>
+<span id="cb19-80"><a href="#cb19-80" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(<span class="sc">~</span>.<span class="sc">-</span><span class="dv">1</span>, <span class="at">data =</span> df)</span>
+<span id="cb19-81"><a href="#cb19-81" tabindex="-1"></a></span>
+<span id="cb19-82"><a href="#cb19-82" tabindex="-1"></a><span class="co"># Preprocess the data: scale and remove zero- or near-zero-variance predictors</span></span>
+<span id="cb19-83"><a href="#cb19-83" tabindex="-1"></a>preProc <span class="ot">&lt;-</span> <span class="fu">preProcess</span>(m, <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;center&quot;</span>, <span class="st">&quot;scale&quot;</span>, <span class="st">&quot;nzv&quot;</span>))</span>
+<span id="cb19-84"><a href="#cb19-84" tabindex="-1"></a></span>
+<span id="cb19-85"><a href="#cb19-85" tabindex="-1"></a><span class="co"># Transform the data using the preprocessing parameters</span></span>
+<span id="cb19-86"><a href="#cb19-86" tabindex="-1"></a>m_transformed <span class="ot">&lt;-</span> <span class="fu">predict</span>(preProc, m)</span></code></pre></div>
+<p>Perform Principal Component Analysis (PCA) to reduce the
+dimensionality of the data and K-means clustering to group Pokémon
+species based on their similarities. Create a 2D scatterplot and 3D
+scatterplot to allow a visual exploration of the clusters and
+similarities between different Pokémon.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Perform PCA</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(m_transformed, <span class="at">scale. =</span> F)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="co"># Perform K-means clustering</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">19</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>kmeans_result <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="at">centers =</span> <span class="dv">6</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a><span class="co"># Create a data frame for plotting; Add labels to the plot data</span></span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="at">cluster =</span> <span class="fu">as.factor</span>(kmeans_result<span class="sc">$</span>cluster), <span class="at">labels =</span> labels<span class="sc">$</span>name)</span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a>dark_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#00008B&quot;</span>, <span class="st">&quot;#006400&quot;</span>, <span class="st">&quot;#8B0000&quot;</span>, <span class="st">&quot;#008B8B&quot;</span>, <span class="st">&quot;#8B008B&quot;</span>, <span class="st">&quot;#FF8C00&quot;</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" tabindex="-1"></a><span class="co"># Create a 2D plot</span></span>
+<span id="cb20-14"><a href="#cb20-14" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> PC1, <span class="at">y =</span> PC2, <span class="at">color =</span> <span class="fu">as.factor</span>(cluster), <span class="at">label =</span> labels)) <span class="sc">+</span></span>
+<span id="cb20-15"><a href="#cb20-15" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb20-16"><a href="#cb20-16" tabindex="-1"></a>  <span class="co"># geom_text(aes(label=labels), hjust=0, vjust=0) +</span></span>
+<span id="cb20-17"><a href="#cb20-17" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span>dark_colors) <span class="sc">+</span></span>
+<span id="cb20-18"><a href="#cb20-18" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;2D Rendering of Principle Component Pokémon Kmeans Clusters&quot;</span>,</span>
+<span id="cb20-19"><a href="#cb20-19" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cluster&quot;</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>To see the scatter plot as an interactive 2d plot (with Pokémon names
+showing when a point is hovered over or selected), click <a href="plots/plot_2d.html">here</a>. For the same plot but in 3d, click
+<a href="plots/plot_3d.html">here</a>. Each of these plots was generated
+with the following code:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="co"># Create a 2D plot with labels</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>p_2d <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(plot_data, <span class="at">x =</span> <span class="sc">~</span>PC1, <span class="at">y =</span> <span class="sc">~</span>PC2, </span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;scatter&quot;</span>, </span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>        <span class="at">mode =</span> <span class="st">&quot;markers&quot;</span>, </span>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span>labels, </span>
+<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a>        <span class="at">hoverinfo =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span>cluster, </span>
+<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a>        <span class="at">colors =</span> dark_colors) <span class="sc">%&gt;%</span></span>
+<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">&quot;2D Rendering of Principle Component Pokémon Kmeans Clusters&quot;</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a>                      <span class="at">pad =</span> <span class="fu">list</span>(<span class="at">t=</span><span class="dv">50</span>, <span class="at">b=</span><span class="dv">10</span>))</span>
+<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a>  )</span>
+<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a><span class="co"># Perform K-means clustering, this time with 3 PCs</span></span>
+<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a>kmeans_result_3d <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">centers =</span> <span class="dv">6</span>)</span>
+<span id="cb21-16"><a href="#cb21-16" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" tabindex="-1"></a><span class="co"># Create a data frame for plotting; Add labels to the plot data</span></span>
+<span id="cb21-18"><a href="#cb21-18" tabindex="-1"></a>plot_data_3d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">cluster =</span> <span class="fu">as.factor</span>(kmeans_result<span class="sc">$</span>cluster), <span class="at">labels =</span> labels<span class="sc">$</span>name)</span>
+<span id="cb21-19"><a href="#cb21-19" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" tabindex="-1"></a><span class="co"># Create a 3D plot</span></span>
+<span id="cb21-21"><a href="#cb21-21" tabindex="-1"></a>p_3d <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(plot_data_3d, <span class="at">x =</span> <span class="sc">~</span>PC1, <span class="at">y =</span> <span class="sc">~</span>PC2, <span class="at">z=</span><span class="sc">~</span>PC3,</span>
+<span id="cb21-22"><a href="#cb21-22" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;scatter3d&quot;</span>, </span>
+<span id="cb21-23"><a href="#cb21-23" tabindex="-1"></a>        <span class="at">mode =</span> <span class="st">&quot;markers&quot;</span>, </span>
+<span id="cb21-24"><a href="#cb21-24" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span>labels, </span>
+<span id="cb21-25"><a href="#cb21-25" tabindex="-1"></a>        <span class="at">hoverinfo =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb21-26"><a href="#cb21-26" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span>cluster, </span>
+<span id="cb21-27"><a href="#cb21-27" tabindex="-1"></a>        <span class="at">colors =</span> dark_colors) <span class="sc">%&gt;%</span></span>
+<span id="cb21-28"><a href="#cb21-28" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">&quot;3D Rendering of Principle Component Pokémon Kmeans Clusters&quot;</span>,</span>
+<span id="cb21-29"><a href="#cb21-29" tabindex="-1"></a>                      <span class="at">pad =</span> <span class="fu">list</span>(<span class="at">t=</span><span class="dv">50</span>, <span class="at">b=</span><span class="dv">10</span>))</span>
+<span id="cb21-30"><a href="#cb21-30" tabindex="-1"></a>  )</span></code></pre></div>
+<hr>
+
+</body>
+</html>
