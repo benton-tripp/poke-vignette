@@ -54,20 +54,20 @@ and their characteristics.
 
 Required packages:
 
-- httr
-- jsonlite
-- dplyr
-- ggplot2
-- tidyr
-- stringr
-- reshape2
-- glue
-- purrr
-- caret
-- factoextra
-- cluster
-- plotly
-- htmlwidgets
+- `httr`
+- `jsonlite`
+- `dplyr`
+- `ggplot2`
+- `tidyr`
+- `stringr`
+- `reshape2`
+- `glue`
+- `purrr`
+- `caret`
+- `factoextra`
+- `cluster`
+- `plotly`
+- `htmlwidgets`
 
 ``` r
 # Load required packages
@@ -474,7 +474,7 @@ str(combined_data)
     ##  $ evolution_chain               : chr "pichu, pikachu, raichu"
     ##  $ forms_switchable              : logi FALSE
     ##  $ gender_rate                   : int 4
-    ##  $ genera                        : chr "Mouse Pokémon"
+    ##  $ genera                        : chr "Mouse Pok<U+00E9>mon"
     ##  $ generation                    : chr "generation-i"
     ##  $ growth_rate                   : chr "medium"
     ##  $ habitat                       : chr "forest"
@@ -656,7 +656,7 @@ all_data %>%
             max_height = max(height))
 ```
 
-    ## # A tibble: 18 × 9
+    ## # A tibble: 18 x 9
     ##    primary_type min_weight median_weight mean_weight max_weight min_height
     ##    <chr>             <int>         <dbl>       <dbl>      <int>      <int>
     ##  1 bug                   2         165          326.       3336          1
@@ -677,7 +677,7 @@ all_data %>%
     ## 16 rock                 57         682         1224.       8200          3
     ## 17 steel                11         810         2000.       9999          2
     ## 18 water                10         280          551.       3980          3
-    ## # ℹ 3 more variables: median_height <dbl>, mean_height <dbl>, max_height <int>
+    ## # i 3 more variables: median_height <dbl>, mean_height <dbl>, max_height <int>
 
 Summarize size (weight and height) by color:
 
@@ -695,7 +695,7 @@ all_data %>%
             max_height = max(height))
 ```
 
-    ## # A tibble: 10 × 9
+    ## # A tibble: 10 x 9
     ##    color  min_weight median_weight mean_weight max_weight min_height median_height
     ##    <chr>       <int>         <dbl>       <dbl>      <int>      <int>         <dbl>
     ##  1 black          12          280         779.       8880          3          10  
@@ -708,7 +708,7 @@ all_data %>%
     ##  8 red             3          326.        706.       9500          3          10.5
     ##  9 white           1          322.        793.       8000          1          12  
     ## 10 yellow          2          234         352.       1780          1           9  
-    ## # ℹ 2 more variables: mean_height <dbl>, max_height <int>
+    ## # i 2 more variables: mean_height <dbl>, max_height <int>
 
 Compare types with colors:
 
@@ -719,7 +719,7 @@ all_data %>%
   pivot_wider(names_from = color, values_from = n, values_fill = 0)
 ```
 
-    ## # A tibble: 18 × 11
+    ## # A tibble: 18 x 11
     ##    primary_type black  blue brown  gray green purple   red white yellow  pink
     ##    <chr>        <int> <int> <int> <int> <int>  <int> <int> <int>  <int> <int>
     ##  1 bug              2     6     5    11    10      6    19     7     15     0
@@ -752,7 +752,7 @@ all_data %>%
   pivot_wider(names_from = is_legendary, values_from = n, values_fill = 0)
 ```
 
-    ## # A tibble: 2 × 3
+    ## # A tibble: 2 x 3
     ##   is_mythical  Legendary `Not Legendary`
     ##   <chr>            <int>           <int>
     ## 1 Not Mythical        58             905
@@ -786,34 +786,34 @@ all_data %>%
   pivot_wider(names_from = primary_type, values_from = n, values_fill = 0)
 ```
 
-    ## # A tibble: 15 × 19
+    ## # A tibble: 15 x 19
     ##    egg_group   bug  dark dragon electric fairy fighting  fire flying ghost grass ground
     ##    <chr>     <int> <int>  <int>    <int> <int>    <int> <int>  <int> <int> <int>  <int>
-    ##  1 egg_grou…    76     0      0        0     0        0     2      0     0     0      5
-    ##  2 egg_grou…     0     0      0        0     0        0     0      0     0     0      0
-    ##  3 egg_grou…     0     5     26        2     0        0     4      2     0     6      5
-    ##  4 egg_grou…     2     3      0        7    18        1     0      0     0    11      0
-    ##  5 egg_grou…     0     4      1        2     2        2     2      8     0     3      0
-    ##  6 egg_grou…     0    19      1       22     5       11    40      0     2    20     21
-    ##  7 egg_grou…     2     7      0        2     0       23    11      0     0     2      0
-    ##  8 egg_grou…     0     0      3        5     2        0     2      0    24     0      2
-    ##  9 egg_grou…     3     0      3        5     2        1     0      0     5     2      5
-    ## 10 egg_grou…     0     0      7        5     0        0     4      0     0    15      5
-    ## 11 egg_grou…     4     9      8       13     6        7     8      0     3     6      3
-    ## 12 egg_grou…     2     0      0        0     1        0     0      0     2    77      2
-    ## 13 egg_grou…     2     2      3        5     0        2     0      1     1     0      1
-    ## 14 egg_grou…     0     3      1        0     0        0     0      0     0     0      0
-    ## 15 egg_grou…     2     0      0        0     0        2     0      0     1     0      0
-    ## # ℹ 7 more variables: ice <int>, normal <int>, poison <int>, psychic <int>,
+    ##  1 egg_grou~    76     0      0        0     0        0     2      0     0     0      5
+    ##  2 egg_grou~     0     0      0        0     0        0     0      0     0     0      0
+    ##  3 egg_grou~     0     5     26        2     0        0     4      2     0     6      5
+    ##  4 egg_grou~     2     3      0        7    18        1     0      0     0    11      0
+    ##  5 egg_grou~     0     4      1        2     2        2     2      8     0     3      0
+    ##  6 egg_grou~     0    19      1       22     5       11    40      0     2    20     21
+    ##  7 egg_grou~     2     7      0        2     0       23    11      0     0     2      0
+    ##  8 egg_grou~     0     0      3        5     2        0     2      0    24     0      2
+    ##  9 egg_grou~     3     0      3        5     2        1     0      0     5     2      5
+    ## 10 egg_grou~     0     0      7        5     0        0     4      0     0    15      5
+    ## 11 egg_grou~     4     9      8       13     6        7     8      0     3     6      3
+    ## 12 egg_grou~     2     0      0        0     1        0     0      0     2    77      2
+    ## 13 egg_grou~     2     2      3        5     0        2     0      1     1     0      1
+    ## 14 egg_grou~     0     3      1        0     0        0     0      0     0     0      0
+    ## 15 egg_grou~     2     0      0        0     0        2     0      0     1     0      0
+    ## # i 7 more variables: ice <int>, normal <int>, poison <int>, psychic <int>,
     ## #   rock <int>, steel <int>, water <int>
 
 ### PCA and Clustering
 
 Applying the methods used on the egg variables in the previous section,
 create dummy variables for categorical variables currently stored as
-delimited strings. Then, use caret to create dummies for additional
-categorical data, scale the data, and remove zero or near-zero-variance
-predictors.
+delimited strings. Then, use the `caret` package to create dummies for
+additional categorical data, scale the data, and remove zero or
+near-zero-variance predictors.
 
 ``` r
 # Function to process dummy data
@@ -911,9 +911,9 @@ contribution of each component in capturing the variation in the data.
 
 The `prcomp` function performs PCA and provides the eigenvalues
 (referred to as “singular values”) in the `pca$sdev` object. The
-`get_eig` and `fviz_eig` functions from the factoextra package are used
-extract and visualize the eigenvalues. The higher the eigenvalue, the
-more variance in the data is captured by the corresponding principal
+`get_eig` and `fviz_eig` functions from the `factoextra` package are
+used extract and visualize the eigenvalues. The higher the eigenvalue,
+the more variance in the data is captured by the corresponding principal
 component. Larger eigenvalues suggest greater importance or “goodness”
 of a component in representing the data.
 

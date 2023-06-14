@@ -25,20 +25,20 @@ The final part of the vignette continues the analysis, and demonstrates how to u
 
 Required packages:
 
-- httr
-- jsonlite
-- dplyr
-- ggplot2
-- tidyr
-- stringr
-- reshape2
-- glue
-- purrr
-- caret
-- factoextra
-- cluster
-- plotly
-- htmlwidgets
+- `httr`
+- `jsonlite`
+- `dplyr`
+- `ggplot2`
+- `tidyr`
+- `stringr`
+- `reshape2`
+- `glue`
+- `purrr`
+- `caret`
+- `factoextra`
+- `cluster`
+- `plotly`
+- `htmlwidgets`
 
 ```{r vignette-setup}
 # Load required packages
@@ -644,7 +644,7 @@ all_data %>%
 
 ### PCA and Clustering
 
-Applying the methods used on the egg variables in the previous section, create dummy variables for categorical variables currently stored as delimited strings. Then, use caret to create dummies for additional categorical data, scale the data, and remove zero or near-zero-variance predictors. 
+Applying the methods used on the egg variables in the previous section, create dummy variables for categorical variables currently stored as delimited strings. Then, use the `caret` package to create dummies for additional categorical data, scale the data, and remove zero or near-zero-variance predictors. 
 
 ```{r pca-cleaning}
 
@@ -739,7 +739,7 @@ m_transformed <- predict(preProc, m)
 
 Perform Principal Component Analysis (PCA) to reduce the dimensionality of the data. The eigenvalues in PCA represent the amount of variance explained by each principal component. They indicate the importance or contribution of each component in capturing the variation in the data.
 
-The `prcomp` function performs PCA and provides the eigenvalues (referred to as "singular values") in the `pca$sdev` object. The `get_eig` and `fviz_eig` functions from the factoextra package are used extract and visualize the eigenvalues. The higher the eigenvalue, the more variance in the data is captured by the corresponding principal component. Larger eigenvalues suggest greater importance or "goodness" of a component in representing the data.
+The `prcomp` function performs PCA and provides the eigenvalues (referred to as "singular values") in the `pca$sdev` object. The `get_eig` and `fviz_eig` functions from the `factoextra` package are used extract and visualize the eigenvalues. The higher the eigenvalue, the more variance in the data is captured by the corresponding principal component. Larger eigenvalues suggest greater importance or "goodness" of a component in representing the data.
 
 
 ```{r pca-top-10}
