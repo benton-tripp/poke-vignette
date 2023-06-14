@@ -505,7 +505,9 @@ long_data <- all_data %>%
   select(all_of(vars)) %>%
   gather(variable, value)
 
-## TODO: Fix the labels in the facet-wrapped plots
+## TODO: 
+## - Fix the labels in the facet-wrapped plots
+## - The plots output in my github pages and README.md are too small
 
 # Create a single plot with facets for each variable
 ggplot(long_data, aes(x = value)) +
@@ -522,8 +524,8 @@ Create boxplots for each of the same variables in the dataset in order to better
 
 ## TODO: 
 ## - Fix the labels in the facet-wrapped plots
-## - Add Color to the plots
-## - Add points with jitter (maybe)?
+## - Add a bit of Color to the plots
+## - The plots output in my github pages and README.md are too small
 
 # Create a single plot with facets for each variable
 ggplot(long_data, aes(x = variable, y = value)) +
