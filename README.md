@@ -1,4 +1,17 @@
 
+- [Vignette - Pokémon Species
+  Analysis](#vignette---pokémon-species-analysis)
+  - [Overview](#overview)
+  - [Load Required Packages](#load-required-packages)
+  - [Define Functions](#define-functions)
+    - [Get Data](#get-data)
+    - [Data Cleaning](#data-cleaning)
+    - [Other Functions](#other-functions)
+  - [Basic Example](#basic-example)
+  - [Analysis Example](#analysis-example)
+    - [Exploratory Analysis](#exploratory-analysis)
+    - [PCA and Clustering](#pca-and-clustering)
+
 # Vignette - Pokémon Species Analysis
 
 Benton Tripp <br> 2023-06-14
