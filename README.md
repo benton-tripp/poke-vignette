@@ -584,8 +584,6 @@ long_data <- all_data %>%
   select(all_of(vars)) %>%
   gather(variable, value)
 
-## TODO: Fix the labels in the facet-wrapped plots
-
 # Create a single plot with facets for each variable
 ggplot(long_data, aes(x = value)) +
   geom_histogram(aes(y = ..density..), bins = 30, alpha = 0.5, color="darkblue") +
@@ -601,14 +599,9 @@ to better understand if the data is symmetrical, how tightly the data is
 grouped, and if and how the data is skewed:
 
 ``` r
-## TODO: 
-## - Fix the labels in the facet-wrapped plots
-## - Add Color to the plots
-## - Add points with jitter (maybe)?
-
 # Create a single plot with facets for each variable
 ggplot(long_data, aes(x = variable, y = value)) +
-  geom_boxplot() +
+  geom_boxplot(fill = "lightblue", color = "darkblue") +
   facet_wrap(~ variable, scales = "free") +
   labs(title = "Boxplots", x = "Variable", y = "Value")
 ```

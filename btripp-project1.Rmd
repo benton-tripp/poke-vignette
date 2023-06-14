@@ -495,7 +495,7 @@ ggplot(na_prop_long, aes(x = variable, y = prop_na, fill = generation)) +
 
 In this step, histograms and density plots are created for continuous numeric variable in the dataset:
 
-```{r num-hist}
+```{r num-hist, fig.width=10, fig.height=8}
 
 # Select variables
 vars <- c(grep("^base_", names(all_data), value = T), "weight", "height", "capture_rate", "pal_park_encounters_rate")
@@ -504,10 +504,6 @@ vars <- c(grep("^base_", names(all_data), value = T), "weight", "height", "captu
 long_data <- all_data %>%
   select(all_of(vars)) %>%
   gather(variable, value)
-
-## TODO: 
-## - Fix the labels in the facet-wrapped plots
-## - The plots output in my github pages and README.md are too small
 
 # Create a single plot with facets for each variable
 ggplot(long_data, aes(x = value)) +
@@ -520,16 +516,11 @@ ggplot(long_data, aes(x = value)) +
 
 Create boxplots for each of the same variables in the dataset in order to better understand if the data is symmetrical, how tightly the data is grouped, and if and how the data is skewed:
 
-```{r box-plots}
-
-## TODO: 
-## - Fix the labels in the facet-wrapped plots
-## - Add a bit of Color to the plots
-## - The plots output in my github pages and README.md are too small
+```{r box-plots, fig.width=10, fig.height=8}
 
 # Create a single plot with facets for each variable
 ggplot(long_data, aes(x = variable, y = value)) +
-  geom_boxplot() +
+  geom_boxplot(fill = "lightblue", color = "darkblue") +
   facet_wrap(~ variable, scales = "free") +
   labs(title = "Boxplots", x = "Variable", y = "Value")
 
