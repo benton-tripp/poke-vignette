@@ -7,8 +7,7 @@
         -   [Data Cleaning](#data-cleaning)
         -   [Other Functions](#other-functions)
     -   [Basic Example](#basic-example)
-    -   [Analysis Example using Pokémon API
-        Data](#analysis-example-using-pokémon-api-data)
+    -   [Analysis Example](#analysis-example)
 
 # Vignette - Pokémon Species Analysis
 
@@ -437,6 +436,69 @@ and Pokémon endpoints into a single dataset:
     ##  $ base_special_defense          : int 50
     ##  $ base_speed                    : int 90
 
-## Analysis Example using Pokémon API Data
+## Analysis Example
+
+In this section, a more comprehensive analysis of the data fetched from
+the Pokémon API is conducted. The analysis includes data cleaning,
+feature engineering, exploratory data analysis, and clustering. We
+create histograms, density plots, and boxplots for different variables
+in the dataset. This provides insights into data distribution and helps
+to identify potential outliers.
+
+This section also demonstrates a potential use-case of the data use
+Principal Component Analysis (PCA) and K-means clustering to group
+Pokémon species based on their similarities. The results of the
+clustering analysis are visualized using 2D and 3D scatter plots.
+
+The first step of this analysis is to get the data for all 9 generations
+(the default of the `get_bulk_data` function):
+
+    all_data <- get_bulk_data(verbose=T)
+
+To better understand what data is actually usable, create a bar plot
+depicting “NA” counts by variable (only include variables with NA
+counts):
+
+    # Calculate NA counts
+    na_counts <- sapply(all_data, function(x) sum(is.na(x)))
+
+    # Keep only variables with NA counts
+    na_counts <- na_counts[na_counts > 0]
+
+    # Convert to data frame for plotting
+    na_counts_df <- data.frame(variable = names(na_counts), count = na_counts)
+
+    # Create bar plot
+    ggplot(na_counts_df, aes(x = variable, y = count)) +
+      geom_bar(stat = "identity", fill="darkblue") +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+      labs(title = "NA Counts by Variable", x = "Variable", y = "Count of NAs")
+
+![](README_files/figure-markdown_strict/na-bar-1.png)
+
+Create the same plot, but have the bars be stacked, and colored by the
+“generation” variable:
+
+    # Calculate proportion of NAs in each column for each generation
+    na_prop <- all_data %>%
+      group_by(generation) %>%
+      summarise(across(everything(), ~mean(is.na(.))))
+
+    # Reshape data for plotting
+    na_prop_long <- na_prop %>%
+      pivot_longer(-generation, names_to = "variable", values_to = "prop_na")
+
+    # Filter to include only variables with NAs
+    na_prop_long <- na_prop_long %>%
+      filter(prop_na > 0)
+
+    # Create stacked bar plot
+    ggplot(na_prop_long, aes(x = variable, y = prop_na, fill = generation)) +
+      geom_bar(stat = "identity") +
+      scale_fill_brewer(palette = "Paired") +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+      labs(title = "Proportion of NAs by Variable and Generation", x = "Variable", y = "Proportion of NAs")
+
+![](README_files/figure-markdown_strict/na-bar-stacked-1.png)
 
 <hr>
