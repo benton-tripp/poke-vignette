@@ -775,7 +775,7 @@ ggplot(plot_data, aes(x = PC1, y = PC2, color = as.factor(cluster), label = labe
   geom_point() +
   # geom_text(aes(label=labels), hjust=0, vjust=0) +
   scale_color_manual(values=dark_colors) +
-  labs(title = "2D Rendering of Principle Component Pokémon Kmeans Clusters",
+  labs(title = "2D Rendering of Principle Component Pokemon Kmeans Clusters",
        color = "Cluster")
 
 ```
@@ -792,7 +792,7 @@ p_2d <- plot_ly(plot_data, x = ~PC1, y = ~PC2,
         hoverinfo = "text",
         color = ~cluster, 
         colors = dark_colors) %>%
-  layout(title = "2D Rendering of Principle Component Pokémon Kmeans Clusters",
+  layout(title = "2D Rendering of Principle Component Pokemon Kmeans Clusters",
          margin = list(t=50, b=10))
 
 
@@ -810,7 +810,7 @@ p_3d <- plot_ly(plot_data_3d, x = ~PC1, y = ~PC2, z=~PC3,
         hoverinfo = "text",
         color = ~cluster, 
         colors = dark_colors) %>%
-  layout(title = "3D Rendering of Principle Component Pokémon Kmeans Clusters",
+  layout(title = "3D Rendering of Principle Component Pokemon Kmeans Clusters",
          margin = list(t=50, b=10))
 
 ```
