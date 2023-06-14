@@ -450,6 +450,8 @@ all_data <- get_bulk_data(verbose=T) %>%
 
 ```
 
+### Exploratory Analysis
+
 To better understand what data is actually usable, create a bar plot depicting "NA" counts by variable (only include variables with NA counts):
 
 ```{r na-bar}
@@ -530,6 +532,7 @@ ggplot(long_data, aes(x = variable, y = value)) +
 
 ```
 
+Correlation between numeric variables:
 
 ```{r corr-heatmap, fig.height=10, fig.width=10}
 
@@ -551,6 +554,8 @@ ggplot(corr_matrix, aes(x=Var1, y=Var2, fill=value)) +
 
 ```
 
+Summarize size (weight and height) by type:
+
 ```{r size-by-type}
 
 # Summarize Pokémon sizes by (primary) type
@@ -565,6 +570,8 @@ all_data %>%
             mean_height = mean(height),
             max_height = max(height))
 ```
+
+Summarize size (weight and height) by color:
 
 ```{r size-by-color}
 
@@ -581,6 +588,8 @@ all_data %>%
             max_height = max(height))
 ```
 
+Compare types with colors:
+
 ```{r type-color}
 
 # Create contingency table showing primary type vs color
@@ -590,7 +599,52 @@ all_data %>%
 
 ```
 
-Create dummy variables for categorical variables, scale the data, and remove zero or near-zero-variance predictors. 
+Check whether mythical and legendary the same, or if they ever overlap:
+
+```{r leg-myth}
+
+# Create contingency table showing legendary vs mythical
+all_data %>%
+  mutate(is_legendary = ifelse(is_legendary, "Legendary", "Not Legendary"),
+         is_mythical = ifelse(is_mythical, "Mythical", "Not Mythical")) %>%
+  count(is_legendary, is_mythical) %>%
+  pivot_wider(names_from = is_legendary, values_from = n, values_fill = 0)
+
+```
+
+Compare egg groups to types:
+
+```{r egg-type}
+
+# Get vector of unique egg groups
+egg_groups <- all_data$egg_groups %>% 
+  map(., ~str_split(.x, ", ")) %>% 
+  unlist() %>% 
+  unique() %>% 
+  sort()
+
+# Create Dummy Variables for egg_groups
+egg_groups_v <- strsplit(all_data$egg_groups, ", ")
+egg_groups_dummy <- lapply(egg_groups_v, function(x) table(factor(x, levels=egg_groups)))
+
+# Convert list of tables to data frame
+egg_groups_dummy <- do.call(rbind, egg_groups_dummy)
+colnames(egg_groups_dummy) <- paste0("egg_group_", gsub("-", "_", colnames(egg_groups_dummy)))
+
+# Combine
+all_data %>%
+  select(primary_type) %>%
+  cbind(., egg_groups_dummy) %>%
+  pivot_longer(cols = starts_with("egg_group_"), names_to = "egg_group", values_to = "count") %>%
+  group_by(primary_type, egg_group) %>%
+  summarize(n = sum(count)) %>%
+  pivot_wider(names_from = primary_type, values_from = n, values_fill = 0)
+
+```
+
+### PCA and Clustering
+
+Applying the methods used on the egg variables in the previous section, create dummy variables for categorical variables currently stored as delimited strings. Then, use caret to create dummies for additional categorical data, scale the data, and remove zero or near-zero-variance predictors. 
 
 ```{r pca-cleaning}
 
@@ -614,7 +668,7 @@ dummy_data_processing <- function(data) {
   abilities <- get_all_vars("ability")
   types <- get_all_vars("type")
   moves <- get_all_vars("move")
-  egg_groups <- all_data$egg_groups %>% 
+  egg_groups <- data$egg_groups %>% 
     map(., ~str_split(.x, ", ")) %>% 
     unlist() %>% 
     unique() %>% 
@@ -683,13 +737,30 @@ m_transformed <- predict(preProc, m)
 
 ```
 
-Perform Principal Component Analysis (PCA) to reduce the dimensionality of the data and K-means clustering to group Pokémon species based on their similarities. Create a 2D scatterplot and 3D scatterplot to allow a visual exploration of the clusters and similarities between different Pokémon.
+Perform Principal Component Analysis (PCA) to reduce the dimensionality of the data. The eigenvalues in PCA represent the amount of variance explained by each principal component. They indicate the importance or contribution of each component in capturing the variation in the data.
 
-```{r pca-2d}
+The `prcomp` function performs PCA and provides the eigenvalues (referred to as "singular values") in the `pca$sdev` object. The `get_eig` and `fviz_eig` functions from the factoextra package are used extract and visualize the eigenvalues. The higher the eigenvalue, the more variance in the data is captured by the corresponding principal component. Larger eigenvalues suggest greater importance or "goodness" of a component in representing the data.
+
+
+```{r pca-top-10}
 
 # Perform PCA
 pca <- prcomp(m_transformed, scale. = F)
 
+get_eig(pca) %>% head(10)
+```
+
+```{r pca-top-10-plot}
+
+fviz_eig(pca, geom = "line", linecolor = "blue", choice="variance", addlabels=T) +
+  labs(title = "Importance of Principal Components", x = "Principal Component", y = "Variance %") +
+  theme_minimal()
+
+```
+
+Use K-means clustering to group Pokémon species based on their similarities. Create a 2D scatterplot (using the first 2 principal components) and 3D scatterplot (using the first 3) to allow a visual exploration of the clusters and similarities between different Pokémon.
+
+```{r pca-2d}
 # Perform K-means clustering
 set.seed(19)
 kmeans_result <- kmeans(pca$x[,1:2], centers = 6)
