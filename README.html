@@ -1263,28 +1263,26 @@ with the following code:</p>
 <span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a>        <span class="at">hoverinfo =</span> <span class="st">&quot;text&quot;</span>,</span>
 <span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span>cluster, </span>
 <span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a>        <span class="at">colors =</span> dark_colors) <span class="sc">%&gt;%</span></span>
-<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">&quot;2D Rendering of Principle Component Pokémon Kmeans Clusters&quot;</span>,</span>
-<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a>                      <span class="at">pad =</span> <span class="fu">list</span>(<span class="at">t=</span><span class="dv">50</span>, <span class="at">b=</span><span class="dv">10</span>))</span>
-<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a>  )</span>
+<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">&quot;2D Rendering of Principle Component Pokémon Kmeans Clusters&quot;</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a>         <span class="at">margin =</span> <span class="fu">list</span>(<span class="at">t=</span><span class="dv">50</span>, <span class="at">b=</span><span class="dv">10</span>))</span>
+<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a></span>
 <span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a></span>
-<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a></span>
-<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a><span class="co"># Perform K-means clustering, this time with 3 PCs</span></span>
-<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a>kmeans_result_3d <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">centers =</span> <span class="dv">6</span>)</span>
-<span id="cb21-16"><a href="#cb21-16" tabindex="-1"></a></span>
-<span id="cb21-17"><a href="#cb21-17" tabindex="-1"></a><span class="co"># Create a data frame for plotting; Add labels to the plot data</span></span>
-<span id="cb21-18"><a href="#cb21-18" tabindex="-1"></a>plot_data_3d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">cluster =</span> <span class="fu">as.factor</span>(kmeans_result<span class="sc">$</span>cluster), <span class="at">labels =</span> labels<span class="sc">$</span>name)</span>
-<span id="cb21-19"><a href="#cb21-19" tabindex="-1"></a></span>
-<span id="cb21-20"><a href="#cb21-20" tabindex="-1"></a><span class="co"># Create a 3D plot</span></span>
-<span id="cb21-21"><a href="#cb21-21" tabindex="-1"></a>p_3d <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(plot_data_3d, <span class="at">x =</span> <span class="sc">~</span>PC1, <span class="at">y =</span> <span class="sc">~</span>PC2, <span class="at">z=</span><span class="sc">~</span>PC3,</span>
-<span id="cb21-22"><a href="#cb21-22" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;scatter3d&quot;</span>, </span>
-<span id="cb21-23"><a href="#cb21-23" tabindex="-1"></a>        <span class="at">mode =</span> <span class="st">&quot;markers&quot;</span>, </span>
-<span id="cb21-24"><a href="#cb21-24" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span>labels, </span>
-<span id="cb21-25"><a href="#cb21-25" tabindex="-1"></a>        <span class="at">hoverinfo =</span> <span class="st">&quot;text&quot;</span>,</span>
-<span id="cb21-26"><a href="#cb21-26" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span>cluster, </span>
-<span id="cb21-27"><a href="#cb21-27" tabindex="-1"></a>        <span class="at">colors =</span> dark_colors) <span class="sc">%&gt;%</span></span>
-<span id="cb21-28"><a href="#cb21-28" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">&quot;3D Rendering of Principle Component Pokémon Kmeans Clusters&quot;</span>,</span>
-<span id="cb21-29"><a href="#cb21-29" tabindex="-1"></a>                      <span class="at">pad =</span> <span class="fu">list</span>(<span class="at">t=</span><span class="dv">50</span>, <span class="at">b=</span><span class="dv">10</span>))</span>
-<span id="cb21-30"><a href="#cb21-30" tabindex="-1"></a>  )</span></code></pre></div>
+<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a><span class="co"># Perform K-means clustering, this time with 3 PCs</span></span>
+<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a>kmeans_result_3d <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">centers =</span> <span class="dv">6</span>)</span>
+<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" tabindex="-1"></a><span class="co"># Create a data frame for plotting; Add labels to the plot data</span></span>
+<span id="cb21-17"><a href="#cb21-17" tabindex="-1"></a>plot_data_3d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pca<span class="sc">$</span>x[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">cluster =</span> <span class="fu">as.factor</span>(kmeans_result<span class="sc">$</span>cluster), <span class="at">labels =</span> labels<span class="sc">$</span>name)</span>
+<span id="cb21-18"><a href="#cb21-18" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" tabindex="-1"></a><span class="co"># Create a 3D plot</span></span>
+<span id="cb21-20"><a href="#cb21-20" tabindex="-1"></a>p_3d <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(plot_data_3d, <span class="at">x =</span> <span class="sc">~</span>PC1, <span class="at">y =</span> <span class="sc">~</span>PC2, <span class="at">z=</span><span class="sc">~</span>PC3,</span>
+<span id="cb21-21"><a href="#cb21-21" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;scatter3d&quot;</span>, </span>
+<span id="cb21-22"><a href="#cb21-22" tabindex="-1"></a>        <span class="at">mode =</span> <span class="st">&quot;markers&quot;</span>, </span>
+<span id="cb21-23"><a href="#cb21-23" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span>labels, </span>
+<span id="cb21-24"><a href="#cb21-24" tabindex="-1"></a>        <span class="at">hoverinfo =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb21-25"><a href="#cb21-25" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span>cluster, </span>
+<span id="cb21-26"><a href="#cb21-26" tabindex="-1"></a>        <span class="at">colors =</span> dark_colors) <span class="sc">%&gt;%</span></span>
+<span id="cb21-27"><a href="#cb21-27" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">&quot;3D Rendering of Principle Component Pokémon Kmeans Clusters&quot;</span>,</span>
+<span id="cb21-28"><a href="#cb21-28" tabindex="-1"></a>         <span class="at">margin =</span> <span class="fu">list</span>(<span class="at">t=</span><span class="dv">50</span>, <span class="at">b=</span><span class="dv">10</span>))</span></code></pre></div>
 <hr>
 
 </body>

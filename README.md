@@ -752,9 +752,8 @@ p_2d <- plot_ly(plot_data, x = ~PC1, y = ~PC2,
         hoverinfo = "text",
         color = ~cluster, 
         colors = dark_colors) %>%
-  layout(title = list(text = "2D Rendering of Principle Component Pokémon Kmeans Clusters",
-                      pad = list(t=50, b=10))
-  )
+  layout(title = "2D Rendering of Principle Component Pokémon Kmeans Clusters",
+         margin = list(t=50, b=10))
 
 
 # Perform K-means clustering, this time with 3 PCs
@@ -771,9 +770,8 @@ p_3d <- plot_ly(plot_data_3d, x = ~PC1, y = ~PC2, z=~PC3,
         hoverinfo = "text",
         color = ~cluster, 
         colors = dark_colors) %>%
-  layout(title = list(text = "3D Rendering of Principle Component Pokémon Kmeans Clusters",
-                      pad = list(t=50, b=10))
-  )
+  layout(title = "3D Rendering of Principle Component Pokémon Kmeans Clusters",
+         margin = list(t=50, b=10))
 ```
 
 <hr>
