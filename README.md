@@ -47,6 +47,7 @@ Required packages:
 - ggplot2
 - tidyr
 - stringr
+- reshape2
 - glue
 - purrr
 - caret
@@ -63,6 +64,7 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 library(stringr)
+library(reshape2)
 library(glue)
 library(purrr)
 library(caret)
@@ -497,7 +499,9 @@ the Pokémon API is conducted. The analysis includes data cleaning,
 feature engineering, exploratory data analysis, and clustering. We
 create histograms, density plots, and boxplots for different variables
 in the dataset. This provides insights into data distribution and helps
-to identify potential outliers.
+to identify potential outliers. A correlation matrix of numerical
+variables, and a deeper dive into some of the interactions between
+variables is also done.
 
 This section also demonstrates a potential use-case of the data use
 Principal Component Analysis (PCA) and K-means clustering to group
@@ -508,7 +512,9 @@ The first step of this analysis is to get the data for all 9 generations
 (the default of the `get_bulk_data` function):
 
 ``` r
-all_data <- get_bulk_data(verbose=T)
+all_data <- get_bulk_data(verbose=T) %>%
+  # Create base type (currently split into subtypes)
+  mutate(primary_type = str_split(types, ",\\s*") %>% sapply("[", 1)) 
 ```
 
 To better understand what data is actually usable, create a bar plot
@@ -596,6 +602,121 @@ ggplot(long_data, aes(x = variable, y = value)) +
 ```
 
 ![](README_files/figure-gfm/box-plots-1.png)<!-- -->
+
+``` r
+# Correlation of numerical values
+corr_matrix <- all_data %>%
+  select(all_of(c(grep("^base_", names(all_data), value = T), "weight", "height", "capture_rate"))) %>% 
+  select(-base_happiness, -base_experience) %>% # Remove since there are NA values
+  cor() %>% 
+  melt()
+
+# Plot heatmap
+ggplot(corr_matrix, aes(x=Var1, y=Var2, fill=value)) +
+  geom_tile() +
+  geom_text(aes(label = round(value, 2)), color = "white", size = 3) +
+  scale_fill_gradient2(low = "blue", mid = "white", high = "red", midpoint = 0) +
+  labs(title = "Correlation Heatmap", x = "", y = "") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+![](README_files/figure-gfm/corr-heatmap-1.png)<!-- -->
+
+``` r
+# Summarize Pokémon sizes by (primary) type
+all_data %>%
+  group_by(primary_type) %>%
+  summarize(min_weight = min(weight),
+            median_weight = median(weight),
+            mean_weight = mean(weight),
+            max_weight = max(weight),
+            min_height = min(height),
+            median_height = median(height),
+            mean_height = mean(height),
+            max_height = max(height))
+```
+
+    ## # A tibble: 18 × 9
+    ##    primary_type min_weight median_weight mean_weight max_weight min_height
+    ##    <chr>             <int>         <dbl>       <dbl>      <int>      <int>
+    ##  1 bug                   2         165          326.       3336          1
+    ##  2 dark                 21         350          784.       8880          4
+    ##  3 dragon               20         530          994.       3800          3
+    ##  4 electric              3         235          456.       2400          2
+    ##  5 fairy                 1          84.5        280.       2150          1
+    ##  6 fighting             40         480          741.       3807          5
+    ##  7 fire                 10         307          632.       4300          3
+    ##  8 flying               18         275          355.        850          2
+    ##  9 ghost                 1         130          380.       2500          1
+    ## 10 grass                 1         130          319.       3100          2
+    ## 11 ground                8         580         1329.       9500          2
+    ## 12 ice                  38         502         1345        8000          3
+    ## 13 normal                8         242          448.       4600          2
+    ## 14 poison                7         251          639.       9500          2
+    ## 15 psychic               1         150          532.       9999          1
+    ## 16 rock                 57         682         1224.       8200          3
+    ## 17 steel                11         810         2000.       9999          2
+    ## 18 water                10         280          551.       3980          3
+    ## # ℹ 3 more variables: median_height <dbl>, mean_height <dbl>, max_height <int>
+
+``` r
+# Summarize Pokémon sizes by color
+all_data %>%
+  group_by(color) %>%
+  summarize(min_weight = min(weight),
+            median_weight = median(weight),
+            mean_weight = mean(weight),
+            max_weight = max(weight),
+            min_height = min(height),
+            median_height = median(height),
+            mean_height = mean(height),
+            max_height = max(height))
+```
+
+    ## # A tibble: 10 × 9
+    ##    color  min_weight median_weight mean_weight max_weight min_height median_height
+    ##    <chr>       <int>         <dbl>       <dbl>      <int>      <int>         <dbl>
+    ##  1 black          12          280         779.       8880          3          10  
+    ##  2 blue            1          290         692.       9999          1          10  
+    ##  3 brown           6          300         671.       9200          2           9  
+    ##  4 gray            7          430         923.       8200          2          10  
+    ##  5 green           3          164         650.       9999          1          10  
+    ##  6 pink            3          155         340.       3100          2           7  
+    ##  7 purple          1          211         554.       9500          1          10  
+    ##  8 red             3          326.        706.       9500          3          10.5
+    ##  9 white           1          322.        793.       8000          1          12  
+    ## 10 yellow          2          234         352.       1780          1           9  
+    ## # ℹ 2 more variables: mean_height <dbl>, max_height <int>
+
+``` r
+# Create contingency table showing primary type vs color
+all_data %>%
+  count(primary_type, color) %>%
+  pivot_wider(names_from = color, values_from = n, values_fill = 0)
+```
+
+    ## # A tibble: 18 × 11
+    ##    primary_type black  blue brown  gray green purple   red white yellow  pink
+    ##    <chr>        <int> <int> <int> <int> <int>  <int> <int> <int>  <int> <int>
+    ##  1 bug              2     6     5    11    10      6    19     7     15     0
+    ##  2 dark            11     6     7     6     1      4     5     2      1     2
+    ##  3 dragon           1     9     1     7     9      3     2     2      1     1
+    ##  4 electric         4     7     0     5     3      2     3     4     26     1
+    ##  5 fairy            0     2     1     0     1      1     0    11      1    11
+    ##  6 fighting         0     5     8    10     1      3     4     5      3     0
+    ##  7 fire             0     1    12     1     0      0    37     3      9     0
+    ##  8 flying           0     3     0     0     0      3     0     1      0     1
+    ##  9 ghost            9     0     5     2     1      9     0     4      1     0
+    ## 10 grass            0     5    11     3    57      6     2     5      3     5
+    ## 11 ground           2     1    14     8     6      3     2     0      3     0
+    ## 12 ice              0     9     3     2     0      1     3    11      0     1
+    ## 13 normal           6     7    42    15     2      5     4    14      5    16
+    ## 14 poison           3     7     3     2     3     20     0     0      0     0
+    ## 15 psychic          4     9     4     1     7      8     0     6      8    10
+    ## 16 rock             3    11    15    12     4      2     3     1      3     1
+    ## 17 steel            1     4     3    15     4      0     0     2      3     1
+    ## 18 water            1    72     6     5     9      8    10     8      2     9
 
 Create dummy variables for categorical variables, scale the data, and
 remove zero or near-zero-variance predictors.

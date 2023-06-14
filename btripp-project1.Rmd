@@ -31,6 +31,7 @@ Required packages:
 - ggplot2
 - tidyr
 - stringr
+- reshape2
 - glue
 - purrr
 - caret
@@ -47,6 +48,7 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 library(stringr)
+library(reshape2)
 library(glue)
 library(purrr)
 library(caret)
@@ -434,7 +436,7 @@ str(combined_data)
 
 ## Analysis Example
 
-In this section, a more comprehensive analysis of the data fetched from the Pokémon API is conducted. The analysis includes data cleaning, feature engineering, exploratory data analysis, and clustering. We create histograms, density plots, and boxplots for different variables in the dataset. This provides insights into data distribution and helps to identify potential outliers. 
+In this section, a more comprehensive analysis of the data fetched from the Pokémon API is conducted. The analysis includes data cleaning, feature engineering, exploratory data analysis, and clustering. We create histograms, density plots, and boxplots for different variables in the dataset. This provides insights into data distribution and helps to identify potential outliers. A correlation matrix of numerical variables, and a deeper dive into some of the interactions between variables is also done.
 
 This section also demonstrates a potential use-case of the data use Principal Component Analysis (PCA) and K-means clustering to group Pokémon species based on their similarities. The results of the clustering analysis are visualized using 2D and 3D scatter plots.
 
@@ -442,7 +444,9 @@ The first step of this analysis is to get the data for all 9 generations (the de
 
 ```{r get-all-data}
 
-all_data <- get_bulk_data(verbose=T)
+all_data <- get_bulk_data(verbose=T) %>%
+  # Create base type (currently split into subtypes)
+  mutate(primary_type = str_split(types, ",\\s*") %>% sapply("[", 1)) 
 
 ```
 
@@ -523,6 +527,66 @@ ggplot(long_data, aes(x = variable, y = value)) +
   geom_boxplot(fill = "lightblue", color = "darkblue") +
   facet_wrap(~ variable, scales = "free") +
   labs(title = "Boxplots", x = "Variable", y = "Value")
+
+```
+
+
+```{r corr-heatmap, fig.height=10, fig.width=10}
+
+# Correlation of numerical values
+corr_matrix <- all_data %>%
+  select(all_of(c(grep("^base_", names(all_data), value = T), "weight", "height", "capture_rate"))) %>% 
+  select(-base_happiness, -base_experience) %>% # Remove since there are NA values
+  cor() %>% 
+  melt()
+
+# Plot heatmap
+ggplot(corr_matrix, aes(x=Var1, y=Var2, fill=value)) +
+  geom_tile() +
+  geom_text(aes(label = round(value, 2)), color = "white", size = 3) +
+  scale_fill_gradient2(low = "blue", mid = "white", high = "red", midpoint = 0) +
+  labs(title = "Correlation Heatmap", x = "", y = "") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+```{r size-by-type}
+
+# Summarize Pokémon sizes by (primary) type
+all_data %>%
+  group_by(primary_type) %>%
+  summarize(min_weight = min(weight),
+            median_weight = median(weight),
+            mean_weight = mean(weight),
+            max_weight = max(weight),
+            min_height = min(height),
+            median_height = median(height),
+            mean_height = mean(height),
+            max_height = max(height))
+```
+
+```{r size-by-color}
+
+# Summarize Pokémon sizes by color
+all_data %>%
+  group_by(color) %>%
+  summarize(min_weight = min(weight),
+            median_weight = median(weight),
+            mean_weight = mean(weight),
+            max_weight = max(weight),
+            min_height = min(height),
+            median_height = median(height),
+            mean_height = mean(height),
+            max_height = max(height))
+```
+
+```{r type-color}
+
+# Create contingency table showing primary type vs color
+all_data %>%
+  count(primary_type, color) %>%
+  pivot_wider(names_from = color, values_from = n, values_fill = 0)
 
 ```
 
