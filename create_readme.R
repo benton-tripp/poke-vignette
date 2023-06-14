@@ -4,7 +4,6 @@ rmarkdown::render("btripp-project1.Rmd",
                   output_file="README.md",
                   output_options = list(
                     toc = T, 
-                    toc_float = T,
                     number_sections = F,
                     df_print = "default"
                   ))

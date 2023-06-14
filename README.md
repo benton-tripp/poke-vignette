@@ -15,6 +15,38 @@ Benton Tripp <br> 2023-06-14
 
 ## Overview
 
+This vignette provides a comprehensive analysis of Pokémon species data,
+leveraging the Pokémon API to obtain and process the data. The primary
+functions used in this analysis are designed to fetch data from the API,
+clean it, and transform it into a tabular data format.
+
+The first part of the vignette focuses on the description and usage of
+the functions that are used to fetch and clean the data. The `get_data`
+function is a general function used to fetch data from a specific
+endpoint of the Pokémon API. For example, the `get_species` is used to
+fetch data about the input Pokémon species. Data fetched from each of
+the different endpoints is then cleaned and transformed using the
+`clean_data` function.
+
+The second part of the vignette provides a basic example of how to use
+these functions to fetch and clean data for a specific Pokémon species.
+The example demonstrates how to fetch data for the Pokémon species
+“Pikachu”, clean the data, and combine the data from the species and
+Pokémon endpoints in\` to a single list. oil9 The third part of the
+vignette presents an advanced example where a large tabular dataset is
+created by fetching and cleaning data for all Pokémon species from all
+generations. This dataset is then analyzed, cleaned further, and
+engineered to create new features. The analysis provides some basic
+insights into the distribution of some of the variables, and where some
+data is missing.
+
+The final part of the vignette continues the analysis, and demonstrates
+how to use Principal Component Analysis (PCA) and K-means clustering to
+group Pokémon species based on their similarities. The results of the
+clustering analysis are visualized using 2D and 3D scatter plots,
+allowing users to interactively explore the clusters of Pokémon species
+and their characteristics.
+
 ## Load Required Packages
 
 Required packages:
@@ -27,6 +59,11 @@ Required packages:
 -   stringr
 -   glue
 -   purrr
+-   caret
+-   factoextra
+-   cluster
+-   plotly
+-   htmlwidgets
 
 <!-- -->
 
@@ -39,6 +76,11 @@ Required packages:
     library(stringr)
     library(glue)
     library(purrr)
+    library(caret)
+    library(factoextra)
+    library(cluster)
+    library(plotly)
+    library(htmlwidgets)
 
 ## Define Functions
 
@@ -500,5 +542,195 @@ Create the same plot, but have the bars be stacked, and colored by the
       labs(title = "Proportion of NAs by Variable and Generation", x = "Variable", y = "Proportion of NAs")
 
 ![](README_files/figure-markdown_strict/na-bar-stacked-1.png)
+
+In this step, histograms and density plots are created for continuous
+numeric variable in the dataset:
+
+    # Select variables
+    vars <- c(grep("^base_", names(all_data), value = T), "weight", "height", "capture_rate", "pal_park_encounters_rate")
+
+    # Reshape data to long format
+    long_data <- all_data %>%
+      select(all_of(vars)) %>%
+      gather(variable, value)
+
+    ## TODO: Fix the labels in the facet-wrapped plots
+
+    # Create a single plot with facets for each variable
+    ggplot(long_data, aes(x = value)) +
+      geom_histogram(aes(y = ..density..), bins = 30, alpha = 0.5, color="darkblue") +
+      geom_density(color = "red", size=.5) +
+      facet_wrap(~ variable, scales = "free") +
+      labs(title = "Histogram and Density Plots", x = "Value", y = "Density")
+
+![](README_files/figure-markdown_strict/num-hist-1.png)
+
+Create boxplots for each of the same variables in the dataset in order
+to better understand if the data is symmetrical, how tightly the data is
+grouped, and if and how the data is skewed:
+
+    ## TODO: 
+    ## - Fix the labels in the facet-wrapped plots
+    ## - Add Color to the plots
+    ## - Add points with jitter (maybe)?
+
+    # Create a single plot with facets for each variable
+    ggplot(long_data, aes(x = variable, y = value)) +
+      geom_boxplot() +
+      facet_wrap(~ variable, scales = "free") +
+      labs(title = "Boxplots", x = "Variable", y = "Value")
+
+![](README_files/figure-markdown_strict/box-plots-1.png)
+
+Create dummy variables for categorical variables, scale the data, and
+remove zero or near-zero-variance predictors.
+
+    # Function to process dummy data
+    # 
+    # This function takes a data frame, extracts the abilities, types, moves, and egg groups, 
+    # and creates dummy variables for each of these categories. It then combines these dummy 
+    # variables with the original data frame, and removes the original variables.
+    #
+    # Args:
+    #   data: A data frame containing AT LEAST the variables 'abilities', 'types', 'moves', and 
+    #        'egg_groups'. Each of these variables should be a character string with elements 
+    #        separated by commas.
+    #
+    # Returns:
+    #   A data frame with the original variables, where abilities', 'types', 'moves', and 
+    #   egg_groups' are replaced by dummy variables. Each dummy variable indicates the 
+    #   presence or absence of a particular ability, type, move, or egg group.
+    #
+    dummy_data_processing <- function(data) {
+      abilities <- get_all_vars("ability")
+      types <- get_all_vars("type")
+      moves <- get_all_vars("move")
+      egg_groups <- all_data$egg_groups %>% 
+        map(., ~str_split(.x, ", ")) %>% 
+        unlist() %>% 
+        unique() %>% 
+        sort()
+      
+      # Create Dummy Variables for abilities, types, moves, egg_groups
+      data$abilities <- strsplit(data$abilities, ", ")
+      data$types <- strsplit(data$types, ", ")
+      data$moves <- strsplit(data$moves, ", ")
+      data$egg_groups <- strsplit(data$egg_groups, ", ")
+
+      abilities_dummy <- lapply(data$abilities, function(x) table(factor(x, levels=abilities)))
+      types_dummy <- lapply(data$types, function(x) table(factor(x, levels=types)))
+      moves_dummy <- lapply(data$moves, function(x) table(factor(x, levels=moves)))
+      egg_groups_dummy <- lapply(data$egg_groups, function(x) table(factor(x, levels=egg_groups)))
+      
+      # Convert lists of tables to data frames
+      abilities_dummy <- do.call(rbind, abilities_dummy)
+      types_dummy <- do.call(rbind, types_dummy)
+      moves_dummy <- do.call(rbind, moves_dummy)
+      egg_groups_dummy <- do.call(rbind, egg_groups_dummy)
+      
+      # Add prefixes and replace dashes with underscores
+      colnames(abilities_dummy) <- paste0("ability_", gsub("-", "_", colnames(abilities_dummy)))
+      colnames(types_dummy) <- paste0("type_", gsub("-", "_", colnames(types_dummy)))
+      colnames(moves_dummy) <- paste0("move_", gsub("-", "_", colnames(moves_dummy)))
+      colnames(egg_groups_dummy) <- paste0("egg_group_", gsub("-", "_", colnames(egg_groups_dummy)))
+      
+      # Combine
+      data <- cbind(data, abilities_dummy, types_dummy, moves_dummy, egg_groups_dummy)
+      
+      # Drop original variables
+      data$abilities <- NULL
+      data$types <- NULL
+      data$moves <- NULL
+      data$egg_groups <- NULL
+
+      return(data)
+    }
+
+    # Apply dummy data function, remove generations 8-9 and the habitat/pal fields (since they have the NA values)
+    df <- dummy_data_processing(all_data) %>%
+      filter(!(generation %in% c("generation-viii", "generation-ix"))) %>%
+      select(-habitat, -pal_park_encounters_base_score, -pal_park_encounters_rate, -pal_park_encounters_area)
+
+    # Identify constant columns
+    constant_columns <- sapply(df, function(col) length(unique(col)) == 1)
+
+    # Remove constant columns
+    df <- df[, !constant_columns]
+
+    labels <- df %>% select(name, generation, id)
+
+    df <- df %>% 
+      select(-name, generation, id) %>%
+      mutate(held_items = ifelse(is.na(held_items), "", held_items))
+
+    # Convert categorical variables to dummy variables
+    m <- model.matrix(~.-1, data = df)
+
+    # Preprocess the data: scale and remove zero- or near-zero-variance predictors
+    preProc <- preProcess(m, method = c("center", "scale", "nzv"))
+
+    # Transform the data using the preprocessing parameters
+    m_transformed <- predict(preProc, m)
+
+Perform Principal Component Analysis (PCA) to reduce the dimensionality
+of the data and K-means clustering to group Pokémon species based on
+their similarities. Create a 2D scatterplot and 3D scatterplot to allow
+a visual exploration of the clusters and similarities between different
+Pokémon.
+
+    # Perform PCA
+    pca <- prcomp(m_transformed, scale. = F)
+
+    # Perform K-means clustering
+    set.seed(19)
+    kmeans_result <- kmeans(pca$x[,1:2], centers = 6)
+
+    # Create a data frame for plotting; Add labels to the plot data
+    plot_data <- data.frame(pca$x[,1:2], cluster = as.factor(kmeans_result$cluster), labels = labels$name)
+
+    dark_colors <- c("#00008B", "#006400", "#8B0000", "#008B8B", "#8B008B", "#FF8C00")
+
+    # Create a 2D plot
+    ggplot(plot_data, aes(x = PC1, y = PC2, color = as.factor(cluster), label = labels)) +
+      geom_point() +
+      # geom_text(aes(label=labels), hjust=0, vjust=0) +
+      scale_color_manual(values=dark_colors) +
+      labs(title = "2D Rendering of Principle Component Pokémon Kmeans Clusters",
+           color = "Cluster")
+
+![](README_files/figure-markdown_strict/pca-2d-1.png)
+
+To see the scatter plot as an interactive 2d plot (with Pokémon names
+showing when a point is hovered over or selected), click
+[here](plots/plot_2d.html). For the same plot but in 3d, click
+[here](plots/plot_3d.html). Each of these plots was generated with the
+following code:
+
+    # Create a 2D plot with labels
+    p_2d <- plot_ly(plot_data, x = ~PC1, y = ~PC2, 
+            type = "scatter", 
+            mode = "markers", 
+            text = ~labels, 
+            hoverinfo = "text",
+            color = ~cluster, 
+            colors = dark_colors) %>%
+      layout(title = "2D Rendering of Principle Component Pokémon Kmeans Clusters")
+
+
+    # Perform K-means clustering, this time with 3 PCs
+    kmeans_result_3d <- kmeans(pca$x[,1:3], centers = 6)
+
+    # Create a data frame for plotting; Add labels to the plot data
+    plot_data_3d <- data.frame(pca$x[,1:3], cluster = as.factor(kmeans_result$cluster), labels = labels$name)
+
+    # Create a 3D plot
+    p_3d <- plot_ly(plot_data_3d, x = ~PC1, y = ~PC2, z=~PC3,
+            type = "scatter3d", 
+            mode = "markers", 
+            text = ~labels, 
+            hoverinfo = "text",
+            color = ~cluster, 
+            colors = dark_colors) %>%
+      layout(title = "3D Rendering of Principle Component Pokémon Kmeans Clusters")
 
 <hr>
